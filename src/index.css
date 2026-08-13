@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f0f6fa;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #9BCBEB;
+  --color-brand-300: #6cb0e2;
+  --color-brand-400: #3b91d6;
+  --color-brand-500: #0072CE;
+  --color-brand-600: #003057;
+  --color-brand-700: #002340;
+  --color-brand-800: #001529;
+  --color-brand-900: #000c17;
+  --color-brand-950: #00050a;
+
+  --color-accent-400: #55cfca;
+  --color-accent-500: #3EBBB6;
+  --color-accent-600: #329994;
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    background-color: white !important;
+  }
+  
+  .min-h-screen {
+    min-height: 0 !important;
+  }
+
+  header {
+    box-shadow: none !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+  }
+
+  main {
+    margin-top: 1rem !important;
+  }
+  
+  .shadow-sm {
+    box-shadow: none !important;
+  }
+  
+  /* Prevent page breaks inside cards */
+  .bg-white {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+}
