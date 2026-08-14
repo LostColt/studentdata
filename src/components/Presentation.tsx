@@ -674,29 +674,39 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 8: VISUAL LEARNING - AWE & WONDER */}
+        {/* SLIDE 8: VISUAL LEARNING - AWE & WONDER (TRANSITION STYLED) */}
         {currentSlide === 8 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-[#002B49] text-white rounded-3xl border border-blue-900 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div className="flex items-center justify-between pb-6 border-b border-blue-800">
               <div>
-                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">PEDAGOGICAL PHILOSOPHY</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">The Power of Visual Learning</h2>
+                <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest bg-blue-600/30 border border-blue-400/30 px-3.5 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <RefreshCw className="w-4 h-4 text-blue-300" /> PART 2: PEDAGOGICAL PHILOSOPHY
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-2">The Power of Visual Learning</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
+              <div className="p-4 rounded-2xl bg-blue-600/30 text-blue-200 border border-blue-400/30">
                 <Telescope className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-4 shadow-sm">
-                <h3 className="text-xl md:text-2xl font-bold text-[#002B49]">Fascination Over Fear</h3>
-                <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
-                  <li><strong className="text-[#002B49]">• Visual Learner Identity:</strong> I love videos and visual models that bring complex ideas to life.</li>
-                  <li><strong className="text-[#002B49]">• Childhood Connection:</strong> As a kid, black holes were terrifying. Watching <em>Interstellar</em> changed everything—revealing the beauty of a central force pulling everything together.</li>
+              <div className="bg-slate-900/90 rounded-2xl p-8 border border-slate-700 space-y-4 shadow-lg">
+                <h3 className="text-xl md:text-2xl font-bold text-blue-200">Fascination Over Fear</h3>
+                <ul className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed font-medium">
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-400 font-bold text-xl">•</span>
+                    <span><strong className="text-white font-semibold">Visual Learner Identity:</strong> I love videos and visual models that bring complex ideas to life.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-blue-400 font-bold text-xl">•</span>
+                    <span><strong className="text-white font-semibold">Childhood Connection:</strong> As a kid, black holes were terrifying. Watching <em>Interstellar</em> changed everything—revealing the beauty of a central force pulling everything together.</span>
+                  </li>
                 </ul>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-slate-800 flex flex-col justify-center space-y-6 shadow-xl">
+              <div className="bg-blue-900/40 rounded-2xl p-8 border border-blue-700/60 flex flex-col justify-center space-y-6 shadow-xl">
                 <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest">CREATING AWE & WONDER</span>
                 <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
                   "When creating edtech, it is not so much about being clean or corporate. It is about creating something memorable—something that evokes awe and wonder in students."
@@ -704,7 +714,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
+            <div className="text-sm text-blue-200 flex justify-between pt-4 border-t border-blue-800">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 9 of {totalSlides}</span>
             </div>
