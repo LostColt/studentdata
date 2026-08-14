@@ -858,56 +858,56 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 12: FEEDBACK FORM & ATTENDANCE QR CODE */}
         {currentSlide === 12 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-slate-900 via-[#001F3F] to-slate-950 rounded-3xl border border-amber-400/50 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-slate-900 via-[#001F3F] to-slate-950 rounded-3xl border border-amber-400/50 shadow-2xl p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-800">
               <div>
                 <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">WORKSHOP ATTENDANCE & FEEDBACK</span>
-                <h2 className="text-3xl md:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">FEEDBACK FORM</h2>
+                <h2 className="text-2xl md:text-4xl font-black text-slate-50 font-['Montserrat'] mt-1">FEEDBACK FORM</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-amber-400 text-slate-950 font-black flex items-center gap-3 shadow-xl shadow-amber-400/20">
-                <QrCode className="w-8 h-8" />
-                <span className="text-sm tracking-wider uppercase font-extrabold hidden sm:inline">GSET</span>
+              <div className="p-3 rounded-xl bg-amber-400 text-slate-950 font-black flex items-center gap-2 shadow-lg shadow-amber-400/20">
+                <QrCode className="w-6 h-6" />
+                <span className="text-xs tracking-wider uppercase font-extrabold hidden sm:inline">GSET</span>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 my-auto py-6 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 my-auto py-3 items-center">
               
               {/* Left Column: QR Code Display Card */}
               <div className="md:col-span-5 flex flex-col items-center justify-center">
-                <div className="bg-white p-6 md:p-8 rounded-3xl shadow-2xl border-4 border-amber-400 text-center space-y-4 relative group">
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider shadow-lg">
+                <div className="bg-white p-4 md:p-5 rounded-2xl shadow-xl border-3 border-amber-400 text-center space-y-2 relative group">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
                     Scan With Phone Camera
                   </div>
                   <img
                     src="/qr-code.png"
                     alt="GSET Workshop Feedback Form QR Code"
-                    className="w-56 h-56 md:w-64 md:h-64 object-contain mx-auto transition-transform duration-300 group-hover:scale-105"
+                    className="w-40 h-40 md:w-48 md:h-48 object-contain mx-auto transition-transform duration-300 group-hover:scale-105"
                   />
-                  <p className="text-sm text-slate-800 font-bold font-mono">Feedback & Attendance Form</p>
+                  <p className="text-xs text-slate-800 font-bold font-mono">Feedback & Attendance Form</p>
                 </div>
               </div>
 
               {/* Right Column: Attendance Instructions & Badge */}
-              <div className="md:col-span-7 space-y-8">
-                <div className="bg-slate-900/90 rounded-2xl p-8 border border-slate-800 space-y-4 shadow-xl">
-                  <h3 className="text-xl md:text-3xl font-medium text-slate-100 font-['Playfair_Display'] italic leading-relaxed">
+              <div className="md:col-span-7 space-y-4">
+                <div className="bg-slate-900/90 rounded-xl p-5 border border-slate-800 space-y-2 shadow-md">
+                  <h3 className="text-lg md:text-xl font-medium text-slate-100 font-['Playfair_Display'] italic leading-relaxed">
                     "Please fill out this form to confirm your attendance and leave valuable feedback for your workshop facilitator."
                   </h3>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-6 p-6 rounded-2xl bg-slate-950/80 border border-amber-400/40 shadow-xl">
-                  <div className="flex items-center gap-4">
-                    <div className="p-4 rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                      <ShieldCheck className="w-8 h-8" />
+                <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-xl bg-slate-950/80 border border-amber-400/40 shadow-md">
+                  <div className="flex items-center gap-3">
+                    <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <ShieldCheck className="w-6 h-6" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-black text-slate-100 tracking-wide font-['Montserrat']">GSET</h4>
-                      <p className="text-xs md:text-sm text-slate-400 uppercase tracking-widest font-bold">Supporting Excellence in Teaching</p>
+                      <h4 className="text-base font-black text-slate-100 tracking-wide font-['Montserrat']">GSET</h4>
+                      <p className="text-xs text-slate-400 uppercase tracking-widest font-bold">Supporting Excellence in Teaching</p>
                     </div>
                   </div>
 
                   <div className="text-right">
-                    <span className="text-3xl md:text-4xl font-black text-amber-400 font-['Montserrat'] tracking-tight block">
+                    <span className="text-2xl md:text-3xl font-black text-amber-400 font-['Montserrat'] tracking-tight block">
                       THANK YOU!
                     </span>
                   </div>
@@ -916,14 +916,14 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             </div>
 
-            <div className="flex items-center justify-between pt-4 border-t border-slate-800 text-sm text-slate-400">
+            <div className="flex items-center justify-between pt-3 border-t border-slate-800 text-xs text-slate-400">
               <div className="flex items-center gap-2">
-                <Heart className="w-4 h-4 text-red-400" />
+                <Heart className="w-3.5 h-3.5 text-red-400" />
                 <span>Thank you for participating in Gulliver Prep GSET</span>
               </div>
               <button
                 onClick={() => setCurrentSlide(0)}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold transition border border-slate-700"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold transition border border-slate-700 text-xs"
               >
                 Back to Start
               </button>
