@@ -40,7 +40,10 @@ import {
   GitBranch,
   CloudUpload,
   Share2,
-  Workflow
+  Workflow,
+  MessageSquare,
+  HelpCircle,
+  MessageSquareQuote
 } from 'lucide-react';
 
 interface PresentationProps {
@@ -53,7 +56,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [copiedPrompt, setCopiedPrompt] = useState<string | null>(null);
 
-  const totalSlides = 13;
+  const totalSlides = 16;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev < totalSlides - 1 ? prev + 1 : prev));
@@ -106,14 +109,17 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
     "2. App Overload & Subscription Fatigue",
     "3. Stepping Into the Unknown",
     "4. Experiment 1: Scrollytelling",
-    "5. Teacher Activity 1: The One-Stop Shop",
-    "6. Visual Learning: Awe & Wonder",
-    "7. Experiment 2: Black Hole Simulation",
-    "8. Becoming the Builder: Padlet Clone",
-    "9. Teacher Activity 2: Clone OR Create Your App",
-    "10. Deployment Blueprint: GitHub & Netlify/Vercel",
-    "11. Conclusion: Building What You Envision",
-    "12. Feedback Form & Attendance QR Code"
+    "5. Discussion: Passion Projects in Curriculum",
+    "6. Teacher Activity 1: The One-Stop Shop",
+    "7. Visual Learning: Awe & Wonder",
+    "8. Discussion: Unlocking Hard-to-Grasp Concepts",
+    "9. Experiment 2: Black Hole Simulation",
+    "10. Becoming the Builder: Padlet Clone",
+    "11. Discussion: Mapping Your EdTech Toolkit",
+    "12. Teacher Activity 2: Clone OR Create Your App",
+    "13. Deployment Blueprint: GitHub & Netlify/Vercel",
+    "14. Conclusion: Building What You Envision",
+    "15. Feedback Form & Attendance QR Code"
   ];
 
   return (
@@ -469,8 +475,59 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 5: TEACHER ACTIVITY 1 */}
+        {/* SLIDE 5: NEW DISCUSSION 1 (BEFORE ACTIVITY 1) */}
         {currentSlide === 5 && (
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
+              <div>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/10 border border-[#002B49]/20 px-3.5 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <MessageSquareQuote className="w-4 h-4 text-[#002B49]" /> WORKSHOP WARM-UP DISCUSSION
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Passion Projects in Your Curriculum</h2>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#002B49] text-white border border-[#002B49]">
+                <Users className="w-8 h-8 text-blue-300" />
+              </div>
+            </div>
+
+            <div className="my-auto py-6 space-y-8 max-w-4xl">
+              <div className="bg-[#002B49] text-white p-8 rounded-3xl border border-blue-900/40 shadow-xl space-y-4">
+                <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest block">FACILITATED QUESTION</span>
+                <h3 className="text-2xl md:text-4xl font-black font-['Playfair_Display'] italic leading-relaxed text-slate-100">
+                  "What is a favorite lesson, story, or concept in your curriculum that you genuinely love teaching?"
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                  <h4 className="text-base font-bold text-[#002B49] flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#002B49]"></div> Reflect & Share
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">
+                    Think of a topic where students usually struggle with engagement or where a linear presentation feels too flat.
+                  </p>
+                </div>
+
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                  <h4 className="text-base font-bold text-[#002B49] flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#002B49]"></div> Prepare for Activity 1
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">
+                    Hold this lesson topic in your mind! Next, we will use AI Studio to transform it into an interactive Scrollytelling web experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-sm text-slate-500">
+              <span>Gulliver Prep GSET Workshop</span>
+              <span className="font-mono">Slide 6 of {totalSlides}</span>
+            </div>
+          </div>
+        )}
+
+        {/* SLIDE 6: TEACHER ACTIVITY 1 */}
+        {currentSlide === 6 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -535,13 +592,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 6 of {totalSlides}</span>
+              <span className="font-mono">Slide 7 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 6: VISUAL LEARNING - AWE & WONDER */}
-        {currentSlide === 6 && (
+        {/* SLIDE 7: VISUAL LEARNING - AWE & WONDER */}
+        {currentSlide === 7 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -572,13 +629,64 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 7 of {totalSlides}</span>
+              <span className="font-mono">Slide 8 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 7: EXPERIMENT 2 - BLACK HOLE SIMULATION */}
-        {currentSlide === 7 && (
+        {/* SLIDE 8: NEW DISCUSSION 2 (BEFORE EXPERIMENT 2) */}
+        {currentSlide === 8 && (
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
+              <div>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/10 border border-[#002B49]/20 px-3.5 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <MessageSquareQuote className="w-4 h-4 text-[#002B49]" /> WORKSHOP WARM-UP DISCUSSION
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Unlocking Hard-to-Grasp Concepts</h2>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#002B49] text-white border border-[#002B49]">
+                <HelpCircle className="w-8 h-8 text-blue-300" />
+              </div>
+            </div>
+
+            <div className="my-auto py-6 space-y-8 max-w-4xl">
+              <div className="bg-[#002B49] text-white p-8 rounded-3xl border border-blue-900/40 shadow-xl space-y-4">
+                <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest block">FACILITATED QUESTION</span>
+                <h3 className="text-2xl md:text-4xl font-black font-['Playfair_Display'] italic leading-relaxed text-slate-100">
+                  "What is a concept in your subject that is notoriously hard for students to grasp? Why would visual aids make it click?"
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                  <h4 className="text-base font-bold text-[#002B49] flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#002B49]"></div> Identify Abstract Topics
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">
+                    Think of topics like orbital mechanics, photosynthesis, historical timelines, or 3D geometry that are hard to explain on paper.
+                  </p>
+                </div>
+
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                  <h4 className="text-base font-bold text-[#002B49] flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#002B49]"></div> Why Visual Aids Win
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">
+                    Interactive simulations replace abstract memorization with intuitive visual spatial reasoning. Next up: 3D Black Hole physics demo!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-sm text-slate-500">
+              <span>Gulliver Prep GSET Workshop</span>
+              <span className="font-mono">Slide 9 of {totalSlides}</span>
+            </div>
+          </div>
+        )}
+
+        {/* SLIDE 9: EXPERIMENT 2 - BLACK HOLE SIMULATION */}
+        {currentSlide === 9 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -619,13 +727,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 8 of {totalSlides}</span>
+              <span className="font-mono">Slide 10 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 8: BECOMING THE BUILDER - PADLET CLONE */}
-        {currentSlide === 8 && (
+        {/* SLIDE 10: BECOMING THE BUILDER - PADLET CLONE */}
+        {currentSlide === 10 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -666,13 +774,64 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 9 of {totalSlides}</span>
+              <span className="font-mono">Slide 11 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 9: TEACHER ACTIVITY 2 */}
-        {currentSlide === 9 && (
+        {/* SLIDE 11: NEW DISCUSSION 3 (BEFORE ACTIVITY 2) */}
+        {currentSlide === 11 && (
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
+              <div>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/10 border border-[#002B49]/20 px-3.5 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <MessageSquareQuote className="w-4 h-4 text-[#002B49]" /> WORKSHOP WARM-UP DISCUSSION
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Mapping Your EdTech Toolkit</h2>
+              </div>
+              <div className="p-4 rounded-2xl bg-[#002B49] text-white border border-[#002B49]">
+                <Boxes className="w-8 h-8 text-blue-300" />
+              </div>
+            </div>
+
+            <div className="my-auto py-6 space-y-8 max-w-4xl">
+              <div className="bg-[#002B49] text-white p-8 rounded-3xl border border-blue-900/40 shadow-xl space-y-4">
+                <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest block">FACILITATED QUESTION</span>
+                <h3 className="text-2xl md:text-4xl font-black font-['Playfair_Display'] italic leading-relaxed text-slate-100">
+                  "What apps or digital tools do you and your students rely on daily? What is in your EdTech wheelhouse?"
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                  <h4 className="text-base font-bold text-[#002B49] flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#002B49]"></div> Identify Your Go-To Tools
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">
+                    Think of subscriptions you pay for or tools you use constantly (Padlet, Quizlet, timers, poll tools, flashcard decks).
+                  </p>
+                </div>
+
+                <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-2">
+                  <h4 className="text-base font-bold text-[#002B49] flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#002B49]"></div> Prepare for Activity 2
+                  </h4>
+                  <p className="text-sm text-slate-600 leading-relaxed font-medium">
+                    In Activity 2, you can choose to either **clone a commercial tool** from your wheelhouse OR **build a custom tool** from scratch!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-sm text-slate-500">
+              <span>Gulliver Prep GSET Workshop</span>
+              <span className="font-mono">Slide 12 of {totalSlides}</span>
+            </div>
+          </div>
+        )}
+
+        {/* SLIDE 12: TEACHER ACTIVITY 2 */}
+        {currentSlide === 12 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div>
@@ -755,13 +914,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-3 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 10 of {totalSlides}</span>
+              <span className="font-mono">Slide 13 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 10: DEPLOYMENT BLUEPRINT */}
-        {currentSlide === 10 && (
+        {/* SLIDE 13: DEPLOYMENT BLUEPRINT */}
+        {currentSlide === 13 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -825,13 +984,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 11 of {totalSlides}</span>
+              <span className="font-mono">Slide 14 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 11: CONCLUSION */}
-        {currentSlide === 11 && (
+        {/* SLIDE 14: CONCLUSION */}
+        {currentSlide === 14 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#002B49]/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -868,8 +1027,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 12: FEEDBACK FORM & ATTENDANCE QR CODE */}
-        {currentSlide === 12 && (
+        {/* SLIDE 15: FEEDBACK FORM & ATTENDANCE QR CODE */}
+        {currentSlide === 15 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
