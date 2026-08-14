@@ -220,6 +220,18 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 <p className="text-xl md:text-2xl font-medium text-slate-700 font-['Playfair_Display'] italic">
                   A Teacher's Guide to Google AI Studio
                 </p>
+
+                {/* Facilitator Bio Card */}
+                <div className="flex items-center gap-3.5 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm w-fit mt-2">
+                  <div className="w-10 h-10 rounded-xl bg-[#002B49] text-white flex items-center justify-center font-bold text-sm shadow-sm">
+                    DT
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-extrabold text-[#002B49]">David Tran</h4>
+                    <p className="text-xs text-slate-600 font-medium">AI Learning and Teaching Specialist | ETIS</p>
+                    <a href="mailto:dtran@gulliverprep.org" className="text-xs text-blue-600 font-semibold hover:underline">dtran@gulliverprep.org</a>
+                  </div>
+                </div>
               </div>
 
               {/* QR Code Scan to Follow Card */}
@@ -1067,13 +1079,14 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </div>
 
                 <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-xl bg-[#002B49]/10 text-[#002B49] border border-[#002B49]/20">
-                      <ShieldCheck className="w-7 h-7" />
+                  <div className="flex items-center gap-3.5">
+                    <div className="p-3 rounded-xl bg-[#002B49] text-white">
+                      <ShieldCheck className="w-7 h-7 text-blue-300" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-black text-[#002B49] tracking-wide font-['Montserrat']">GSET</h4>
-                      <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">Supporting Excellence in Teaching</p>
+                      <h4 className="text-base font-black text-[#002B49] tracking-wide font-['Montserrat']">David Tran</h4>
+                      <p className="text-xs text-slate-600 font-bold">AI Learning and Teaching Specialist | ETIS</p>
+                      <a href="mailto:dtran@gulliverprep.org" className="text-xs text-blue-600 font-semibold hover:underline">dtran@gulliverprep.org</a>
                     </div>
                   </div>
 
