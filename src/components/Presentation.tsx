@@ -40,10 +40,7 @@ import {
   GitBranch,
   CloudUpload,
   Share2,
-  Workflow,
-  Palette,
-  Sun,
-  Moon
+  Workflow
 } from 'lucide-react';
 
 interface PresentationProps {
@@ -56,7 +53,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [copiedPrompt, setCopiedPrompt] = useState<string | null>(null);
 
-  const totalSlides = 15;
+  const totalSlides = 13;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev < totalSlides - 1 ? prev + 1 : prev));
@@ -116,25 +113,23 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
     "9. Teacher Activity 2: Clone OR Create Your App",
     "10. Deployment Blueprint: GitHub & Netlify/Vercel",
     "11. Conclusion: Building What You Envision",
-    "12. Feedback Form & Attendance QR Code",
-    "13. PREVIEW: Theme Option 3 (Executive Slate Blue)",
-    "14. PREVIEW: Theme Option 4 (Modern Light Mode)"
+    "12. Feedback Form & Attendance QR Code"
   ];
 
   return (
-    <div className="relative min-h-screen bg-slate-950 text-slate-100 flex flex-col justify-between select-none overflow-x-hidden font-sans">
+    <div className="relative min-h-screen bg-slate-100 text-slate-900 flex flex-col justify-between select-none overflow-x-hidden font-sans">
       
-      {/* Top Bar Header */}
-      <header className="relative z-30 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-md border-b border-slate-800/80">
+      {/* Top Bar Header (Light Mode) */}
+      <header className="relative z-30 flex items-center justify-between px-6 py-4 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-amber-400 text-slate-950 flex items-center justify-center font-black text-base shadow-md shadow-amber-400/20">
+          <div className="w-9 h-9 rounded-lg bg-[#002B49] text-amber-400 flex items-center justify-center font-black text-base shadow-md">
             GP
           </div>
           <div>
-            <h1 className="text-base md:text-lg font-bold tracking-wide text-slate-100 font-['Montserrat']">
-              GULLIVER PREP <span className="text-amber-400 font-normal">| GSET WORKSHOP</span>
+            <h1 className="text-base md:text-lg font-bold tracking-wide text-[#002B49] font-['Montserrat']">
+              GULLIVER PREP <span className="text-amber-600 font-normal">| GSET WORKSHOP</span>
             </h1>
-            <p className="text-xs text-slate-400 hidden sm:block">From Consumer to Creator: A Teacher's Guide to Google AI Studio</p>
+            <p className="text-xs text-slate-500 hidden sm:block">From Consumer to Creator: A Teacher's Guide to Google AI Studio</p>
           </div>
         </div>
 
@@ -142,7 +137,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           {onToggleDashboard && (
             <button
               onClick={onToggleDashboard}
-              className="text-xs md:text-sm px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium transition border border-slate-700"
+              className="text-xs md:text-sm px-3.5 py-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-800 font-medium transition border border-slate-300"
             >
               Student Dashboard View
             </button>
@@ -150,7 +145,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center gap-2 text-xs md:text-sm px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold transition border border-slate-700"
+            className="flex items-center gap-2 text-xs md:text-sm px-3.5 py-1.5 rounded-lg bg-[#002B49] hover:bg-[#001F3F] text-amber-300 font-bold transition shadow-sm"
           >
             <Menu className="w-4 h-4" />
             <span className="hidden md:inline">Slide Directory ({currentSlide + 1}/{totalSlides})</span>
@@ -158,7 +153,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
           <button
             onClick={toggleFullscreen}
-            className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition border border-slate-700"
+            className="p-2 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition border border-slate-300"
             title="Toggle Fullscreen (F)"
           >
             {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
@@ -168,10 +163,10 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
       {/* Slide Drawer Dropdown */}
       {isMenuOpen && (
-        <div className="absolute top-16 right-6 z-40 w-80 bg-slate-900/95 backdrop-blur-xl border border-slate-700 rounded-xl shadow-2xl p-4 animate-in fade-in slide-in-from-top-2 duration-200">
-          <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-800">
-            <h3 className="text-xs font-bold text-amber-400 tracking-wider uppercase">Jump to Slide</h3>
-            <button onClick={() => setIsMenuOpen(false)} className="text-slate-400 hover:text-slate-200">
+        <div className="absolute top-16 right-6 z-40 w-80 bg-white/98 backdrop-blur-xl border border-slate-300 rounded-2xl shadow-2xl p-4 animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="flex items-center justify-between pb-3 mb-3 border-b border-slate-200">
+            <h3 className="text-xs font-bold text-[#002B49] tracking-wider uppercase">Jump to Slide</h3>
+            <button onClick={() => setIsMenuOpen(false)} className="text-slate-400 hover:text-slate-600">
               <X className="w-4 h-4" />
             </button>
           </div>
@@ -185,8 +180,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 }}
                 className={`w-full text-left text-xs px-3 py-2 rounded-lg transition flex items-center justify-between ${
                   currentSlide === idx
-                    ? 'bg-amber-400/20 text-amber-300 font-bold border border-amber-400/30'
-                    : 'text-slate-300 hover:bg-slate-800/80 hover:text-slate-100'
+                    ? 'bg-[#002B49] text-amber-300 font-bold'
+                    : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 <span className="truncate">{title}</span>
@@ -202,54 +197,54 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
         
         {/* SLIDE 0: TITLE SLIDE */}
         {currentSlide === 0 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-slate-900 via-[#001F3F] to-slate-950 rounded-3xl border border-slate-800 shadow-2xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
             
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-sm font-semibold tracking-widest uppercase">
-                <Sparkles className="w-4 h-4 text-amber-400" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-800 text-sm font-extrabold tracking-widest uppercase">
+                <Sparkles className="w-4 h-4 text-amber-600" />
                 Gulliver Prep GSET Workshop Presentation
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-50 tracking-tight leading-tight font-['Montserrat'] max-w-5xl">
-                From Consumer to <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500">Creator</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-[#002B49] tracking-tight leading-tight font-['Montserrat'] max-w-5xl">
+                From Consumer to <span className="text-amber-600 underline decoration-amber-400 decoration-wavy decoration-2">Creator</span>
               </h1>
-              <p className="text-2xl md:text-3xl font-medium text-amber-300/90 font-['Playfair_Display'] italic max-w-3xl">
+              <p className="text-2xl md:text-3xl font-medium text-slate-700 font-['Playfair_Display'] italic max-w-3xl">
                 A Teacher's Guide to Google AI Studio
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center">
+              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#002B49]/10 text-[#002B49] flex items-center justify-center">
                   <GraduationCap className="w-6 h-6" />
                 </div>
-                <h4 className="text-base md:text-lg font-bold text-slate-100">Pedagogical Shift</h4>
-                <p className="text-sm text-slate-400 leading-relaxed">Moving teachers from software consumers to AI architects.</p>
+                <h4 className="text-base md:text-lg font-bold text-[#002B49]">Pedagogical Shift</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">Moving teachers from software consumers to AI architects.</p>
               </div>
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center">
+              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#002B49]/10 text-[#002B49] flex items-center justify-center">
                   <Code className="w-6 h-6" />
                 </div>
-                <h4 className="text-base md:text-lg font-bold text-slate-100">Zero Code Barriers</h4>
-                <p className="text-sm text-slate-400 leading-relaxed">Natural language prompting as the new building language.</p>
+                <h4 className="text-base md:text-lg font-bold text-[#002B49]">Zero Code Barriers</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">Natural language prompting as the new building language.</p>
               </div>
-              <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-2">
-                <div className="w-10 h-10 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center">
+              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#002B49]/10 text-[#002B49] flex items-center justify-center">
                   <Wand2 className="w-6 h-6" />
                 </div>
-                <h4 className="text-base md:text-lg font-bold text-slate-100">Experiential Tech</h4>
-                <p className="text-sm text-slate-400 leading-relaxed">Creating awe, wonder, and memorable learning tools.</p>
+                <h4 className="text-base md:text-lg font-bold text-[#002B49]">Experiential Tech</h4>
+                <p className="text-sm text-slate-600 leading-relaxed">Creating awe, wonder, and memorable learning tools.</p>
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-6 border-t border-slate-800/80 text-sm text-slate-400">
+            <div className="flex items-center justify-between pt-6 border-t border-slate-200 text-sm text-slate-500">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-amber-400" />
-                <span className="font-medium">Gulliver Prep Educational Technology (GSET)</span>
+                <ShieldCheck className="w-5 h-5 text-amber-600" />
+                <span className="font-semibold text-slate-700">Gulliver Prep Educational Technology (GSET)</span>
               </div>
               <button 
                 onClick={nextSlide}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl shadow-amber-400/20"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#002B49] hover:bg-[#001F3F] text-amber-300 font-extrabold text-base transition shadow-lg"
               >
                 Begin Presentation <ArrowRight className="w-5 h-5" />
               </button>
@@ -259,44 +254,44 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 1: OVERNIGHT EDTECH INNOVATORS */}
         {currentSlide === 1 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">THE PEDAGOGICAL SHIFT</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Overnight EdTech Innovators</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">THE PEDAGOGICAL SHIFT</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Overnight EdTech Innovators</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Globe className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-slate-950/70 rounded-2xl p-8 border border-slate-800 space-y-6">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-100 flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-amber-400"></div>
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-6 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold text-[#002B49] flex items-center gap-3">
+                  <div className="w-3 h-3 rounded-full bg-amber-500"></div>
                   The COVID-19 Acceleration
                 </h3>
-                <ul className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed font-medium">
+                <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-400 font-bold text-xl">•</span>
-                    <span><strong className="text-amber-300 font-semibold">Forced Overnight Mastery:</strong> Teachers instantly became experts in Google Classroom, Teams, Zoom, Meet, and Skype.</span>
+                    <span className="text-amber-600 font-bold text-xl">•</span>
+                    <span><strong className="text-[#002B49] font-semibold">Forced Overnight Mastery:</strong> Teachers instantly became experts in Google Classroom, Teams, Zoom, Meet, and Skype.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-400 font-bold text-xl">•</span>
-                    <span><strong className="text-amber-300 font-semibold">Continuous Digital Sharing:</strong> Lessons evolved into rapid sharing of Docs, PDFs, slides, and video links.</span>
+                    <span className="text-amber-600 font-bold text-xl">•</span>
+                    <span><strong className="text-[#002B49] font-semibold">Continuous Digital Sharing:</strong> Lessons evolved into rapid sharing of Docs, PDFs, slides, and video links.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-400 font-bold text-xl">•</span>
-                    <span><strong className="text-amber-300 font-semibold">The Digital Return:</strong> Returning to physical spaces meant join codes, QR codes, and constant presentations.</span>
+                    <span className="text-amber-600 font-bold text-xl">•</span>
+                    <span><strong className="text-[#002B49] font-semibold">The Digital Return:</strong> Returning to physical spaces meant join codes, QR codes, and constant presentations.</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-between relative overflow-hidden shadow-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/30 flex flex-col justify-between relative overflow-hidden shadow-xl">
                 <Quote className="w-16 h-16 text-amber-400/20 absolute top-6 right-6" />
                 <div className="space-y-6 relative z-10">
-                  <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">CORE PEDAGOGICAL INSIGHT</span>
-                  <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-slate-50 italic font-['Playfair_Display'] leading-relaxed">
+                  <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">CORE PEDAGOGICAL INSIGHT</span>
+                  <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
                     "We didn't just adopt technology—we survived and adapted through it. Every teacher proved they could master complex digital tools under pressure."
                   </blockquote>
                 </div>
@@ -306,7 +301,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 2 of {totalSlides}</span>
             </div>
@@ -315,39 +310,39 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 2: APP OVERLOAD */}
         {currentSlide === 2 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">SUBSCRIPTION FATIGUE</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">The Search for Tangible Tech</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">SUBSCRIPTION FATIGUE</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">The Search for Tangible Tech</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Layers className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto py-6">
-              <div className="bg-slate-950/70 rounded-2xl p-7 border border-slate-800 space-y-4">
-                <div className="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center mb-3">
+              <div className="bg-slate-50 rounded-2xl p-7 border border-slate-200 space-y-4 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-red-500/10 text-red-600 flex items-center justify-center mb-3">
                   <Boxes className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-100">App Accumulation</h3>
-                <p className="text-base text-slate-300 leading-relaxed font-medium">
+                <h3 className="text-xl font-extrabold text-[#002B49]">App Accumulation</h3>
+                <p className="text-base text-slate-600 leading-relaxed font-medium">
                   Collecting tool after tool and subscription after subscription, creating fragmented logins and software overhead.
                 </p>
               </div>
 
-              <div className="bg-slate-950/70 rounded-2xl p-7 border border-amber-400/50 space-y-4 shadow-xl shadow-amber-400/5">
-                <div className="w-12 h-12 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center mb-3">
+              <div className="bg-slate-50 rounded-2xl p-7 border-2 border-amber-400/60 space-y-4 shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-700 flex items-center justify-center mb-3">
                   <Target className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-50">The Search for Unity</h3>
-                <p className="text-base text-slate-200 leading-relaxed font-medium">
+                <h3 className="text-xl font-extrabold text-[#002B49]">The Search for Unity</h3>
+                <p className="text-base text-slate-700 leading-relaxed font-medium">
                   Searching for a single flexible "one-stop shop" platform that can replace disparate apps and simplify tech stack.
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-7 border border-amber-400/60 space-y-4">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-7 border border-amber-400/40 space-y-4 shadow-xl">
                 <div className="w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center mb-3 font-bold">
                   <Sparkles className="w-6 h-6" />
                 </div>
@@ -358,7 +353,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 3 of {totalSlides}</span>
             </div>
@@ -367,41 +362,41 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 3: STEPPING INTO THE UNKNOWN */}
         {currentSlide === 3 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">DISCOVERING GOOGLE AI STUDIO</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Stepping Into the Unknown</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">DISCOVERING GOOGLE AI STUDIO</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Stepping Into the Unknown</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Compass className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-slate-950/70 rounded-2xl p-8 border border-slate-800 space-y-5">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-100 flex items-center gap-3">
-                  <Lightbulb className="w-6 h-6 text-amber-400" />
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-5 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold text-[#002B49] flex items-center gap-3">
+                  <Lightbulb className="w-6 h-6 text-amber-600" />
                   The Desire to Create
                 </h3>
-                <p className="text-base md:text-lg text-slate-200 leading-relaxed font-medium">
+                <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium">
                   When I discovered Google AI Studio, the aim was that I wanted to create something. I didn't know what yet, but I knew I wanted interactive, high-impact learning experiences for my students.
                 </p>
               </div>
 
-              <div className="bg-slate-950/90 rounded-2xl p-8 border border-amber-400/40 space-y-6 shadow-xl">
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">THE FEAR FACTOR</span>
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 space-y-6 shadow-xl">
+                <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">THE FEAR FACTOR</span>
                 <blockquote className="text-xl md:text-2xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
                   "Truth be told, I was scared because I didn't have a technology background."
                 </blockquote>
-                <div className="p-5 rounded-xl bg-blue-950/50 border border-blue-800/50 text-sm md:text-base text-blue-200 space-y-2">
-                  <span className="font-extrabold text-blue-400 block uppercase tracking-wider">Breakthrough Insight</span>
-                  <p className="leading-relaxed">AI Studio removes technical syntax barriers. Natural language prompting becomes your code.</p>
+                <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-700 text-sm md:text-base text-amber-300 space-y-2">
+                  <span className="font-extrabold text-amber-400 block uppercase tracking-wider">Breakthrough Insight</span>
+                  <p className="leading-relaxed text-slate-200">AI Studio removes technical syntax barriers. Natural language prompting becomes your code.</p>
                 </div>
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 4 of {totalSlides}</span>
             </div>
@@ -410,30 +405,30 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 4: EXPERIMENT 1 - SCROLLYTELLING */}
         {currentSlide === 4 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">SCROLLYTELLING DEMO</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Experiment 1: Literature in Motion</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">SCROLLYTELLING DEMO</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Experiment 1: Literature in Motion</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <BookOpen className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-slate-950/70 rounded-2xl p-8 border border-slate-800 space-y-4">
-                <h3 className="text-xl md:text-2xl font-extrabold text-slate-100">Tim O'Brien's <em>The Things They Carried</em></h3>
-                <ul className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed font-medium">
-                  <li><strong className="text-amber-300">• Scrollytelling Concept:</strong> As the reader scrolls, elements on screen animate and shift to unpack narrative depth.</li>
-                  <li><strong className="text-amber-300">• Prompting AI Studio:</strong> Asked AI Studio to build an HTML site explaining the emotional & physical weight of objects in the novel.</li>
-                  <li><strong className="text-amber-300">• Result:</strong> Generated a dynamic, fluid web experience in minutes without manual coding.</li>
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-4 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-extrabold text-[#002B49]">Tim O'Brien's <em>The Things They Carried</em></h3>
+                <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
+                  <li><strong className="text-[#002B49]">• Scrollytelling Concept:</strong> As the reader scrolls, elements on screen animate and shift to unpack narrative depth.</li>
+                  <li><strong className="text-[#002B49]">• Prompting AI Studio:</strong> Asked AI Studio to build an HTML site explaining the emotional & physical weight of objects in the novel.</li>
+                  <li><strong className="text-[#002B49]">• Result:</strong> Generated a dynamic, fluid web experience in minutes without manual coding.</li>
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-8 border border-amber-400/50 flex flex-col justify-between shadow-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-between shadow-xl">
                 <div className="space-y-3">
-                  <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
+                  <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
                   <h4 className="text-lg font-bold text-slate-100">Experience the Scrollytelling Prototype</h4>
                   <p className="text-sm text-slate-300">Interactive literary web experience explaining classic literature.</p>
                 </div>
@@ -441,14 +436,14 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   href="https://scrollytell.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl shadow-amber-400/20"
+                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl"
                 >
                   Open scrollytell.netlify.app <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 5 of {totalSlides}</span>
             </div>
@@ -457,50 +452,50 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 5: TEACHER ACTIVITY 1 */}
         {currentSlide === 5 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">HANDS-ON BUILDING SESSION</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Activity 1: The One-Stop Shop</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">HANDS-ON BUILDING SESSION</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Activity 1: The One-Stop Shop</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Wand2 className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
-              <div className="bg-slate-950/70 rounded-xl p-4 border border-slate-800 space-y-1">
-                <span className="text-xl font-black text-amber-400 font-['Montserrat']">01</span>
-                <h4 className="text-sm font-bold text-slate-100">Select Concept</h4>
-                <p className="text-xs text-slate-400">Identify a topic you are teaching.</p>
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-1">
+                <span className="text-xl font-black text-amber-600 font-['Montserrat']">01</span>
+                <h4 className="text-sm font-bold text-[#002B49]">Select Concept</h4>
+                <p className="text-xs text-slate-500">Identify a topic you are teaching.</p>
               </div>
 
-              <div className="bg-slate-950/70 rounded-xl p-4 border border-amber-400/40 space-y-1">
-                <span className="text-xl font-black text-amber-400 font-['Montserrat']">02</span>
-                <h4 className="text-sm font-bold text-slate-100">Gemini Prompt</h4>
-                <p className="text-xs text-slate-400">Open Gemini to refine your prompt.</p>
+              <div className="bg-slate-50 rounded-xl p-4 border-2 border-amber-400/60 space-y-1">
+                <span className="text-xl font-black text-amber-600 font-['Montserrat']">02</span>
+                <h4 className="text-sm font-bold text-[#002B49]">Gemini Prompt</h4>
+                <p className="text-xs text-slate-500">Open Gemini to refine your prompt.</p>
               </div>
 
-              <div className="bg-slate-950/70 rounded-xl p-4 border border-slate-800 space-y-1">
-                <span className="text-xl font-black text-amber-400 font-['Montserrat']">03</span>
-                <h4 className="text-sm font-bold text-slate-100">AI Generation</h4>
-                <p className="text-xs text-slate-400">Ask AI Studio to create HTML page.</p>
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-1">
+                <span className="text-xl font-black text-amber-600 font-['Montserrat']">03</span>
+                <h4 className="text-sm font-bold text-[#002B49]">AI Generation</h4>
+                <p className="text-xs text-slate-500">Ask AI Studio to create HTML page.</p>
               </div>
 
-              <div className="bg-slate-950/70 rounded-xl p-4 border border-slate-800 space-y-1">
-                <span className="text-xl font-black text-amber-400 font-['Montserrat']">04</span>
-                <h4 className="text-sm font-bold text-slate-100">Share Screen</h4>
-                <p className="text-xs text-slate-400">Share & showcase with peers.</p>
+              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-1">
+                <span className="text-xl font-black text-amber-600 font-['Montserrat']">04</span>
+                <h4 className="text-sm font-bold text-[#002B49]">Share Screen</h4>
+                <p className="text-xs text-slate-500">Share & showcase with peers.</p>
               </div>
             </div>
 
-            <div className="bg-slate-950/90 rounded-2xl border-2 border-amber-400 p-6 md:p-8 my-2 shadow-2xl space-y-4">
+            <div className="bg-[#002B49] rounded-2xl border-2 border-amber-400 p-6 md:p-8 my-2 shadow-xl space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <div className="p-2 rounded-lg bg-amber-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider flex items-center gap-1.5">
                     <Terminal className="w-4 h-4" /> Example Prompt for AI Studio
                   </div>
-                  <span className="text-xs text-slate-400 hidden sm:inline">Use this prompt structure to build your scrollytelling page</span>
+                  <span className="text-xs text-slate-300 hidden sm:inline">Use this prompt structure to build your scrollytelling page</span>
                 </div>
                 <button
                   onClick={() => handleCopyPrompt(
@@ -514,12 +509,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </button>
               </div>
 
-              <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 text-amber-300 font-['Fira_Code'] font-normal text-base md:text-lg leading-relaxed select-text">
+              <div className="p-5 rounded-xl bg-slate-900 border border-slate-700 text-amber-300 font-['Fira_Code'] font-normal text-base md:text-lg leading-relaxed select-text">
                 "Create an interactive, engaging scrollytelling HTML page for a lesson concept. As the user scrolls down, animate visual cards that unpack key narrative ideas with clean CSS transitions, high-contrast typography, and zero external frameworks."
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 6 of {totalSlides}</span>
             </div>
@@ -528,35 +523,35 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 6: VISUAL LEARNING - AWE & WONDER */}
         {currentSlide === 6 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">PEDAGOGICAL PHILOSOPHY</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">The Power of Visual Learning</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">PEDAGOGICAL PHILOSOPHY</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">The Power of Visual Learning</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Telescope className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-slate-950/70 rounded-2xl p-8 border border-slate-800 space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-100">Fascination Over Fear</h3>
-                <ul className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed font-medium">
-                  <li><strong className="text-amber-300">• Visual Learner Identity:</strong> I love videos and visual models that bring complex ideas to life.</li>
-                  <li><strong className="text-amber-300">• Childhood Connection:</strong> As a kid, black holes were terrifying. Watching <em>Interstellar</em> changed everything—revealing the beauty of a central force pulling everything together.</li>
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-4 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold text-[#002B49]">Fascination Over Fear</h3>
+                <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
+                  <li><strong className="text-[#002B49]">• Visual Learner Identity:</strong> I love videos and visual models that bring complex ideas to life.</li>
+                  <li><strong className="text-[#002B49]">• Childhood Connection:</strong> As a kid, black holes were terrifying. Watching <em>Interstellar</em> changed everything—revealing the beauty of a central force pulling everything together.</li>
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-8 border border-amber-400/50 flex flex-col justify-center space-y-6 shadow-xl">
-                <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">CREATING AWE & WONDER</span>
-                <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-slate-50 italic font-['Playfair_Display'] leading-relaxed">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-center space-y-6 shadow-xl">
+                <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">CREATING AWE & WONDER</span>
+                <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
                   "When creating edtech, it is not so much about being clean or corporate. It is about creating something memorable—something that evokes awe and wonder in students."
                 </blockquote>
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 7 of {totalSlides}</span>
             </div>
@@ -565,30 +560,30 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 7: EXPERIMENT 2 - BLACK HOLE SIMULATION */}
         {currentSlide === 7 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">INTERACTIVE SIMULATION</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Experiment 2: Visualizing the Impossible</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">INTERACTIVE SIMULATION</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Experiment 2: Visualizing the Impossible</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Orbit className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-slate-950/70 rounded-2xl p-8 border border-slate-800 space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-100">Interactive 3D Black Hole</h3>
-                <ul className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed font-medium">
-                  <li><strong className="text-amber-300">• Prompting AI Studio:</strong> "Make a visualization of a black hole and animate it in an HTML file."</li>
-                  <li><strong className="text-amber-300">• Result:</strong> Real-time particle simulation rendered in browser canvas.</li>
-                  <li><strong className="text-amber-300">• Pedagogical Impact:</strong> Turns abstract astronomical concepts into a tactile visual experience.</li>
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-4 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold text-[#002B49]">Interactive 3D Black Hole</h3>
+                <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
+                  <li><strong className="text-[#002B49]">• Prompting AI Studio:</strong> "Make a visualization of a black hole and animate it in an HTML file."</li>
+                  <li><strong className="text-[#002B49]">• Result:</strong> Real-time particle simulation rendered in browser canvas.</li>
+                  <li><strong className="text-[#002B49]">• Pedagogical Impact:</strong> Turns abstract astronomical concepts into a tactile visual experience.</li>
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-8 border border-amber-400/50 flex flex-col justify-between shadow-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-between shadow-xl">
                 <div className="space-y-3">
-                  <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
+                  <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
                   <h4 className="text-lg font-bold text-slate-100">Inspect 3D Black Hole Canvas</h4>
                   <p className="text-sm text-slate-300">Interactive WebGL / HTML Canvas Physics Demo.</p>
                 </div>
@@ -596,14 +591,14 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   href="https://blackholedemo.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl shadow-amber-400/20"
+                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl"
                 >
                   Open blackholedemo.netlify.app <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 8 of {totalSlides}</span>
             </div>
@@ -612,30 +607,30 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 8: BECOMING THE BUILDER - PADLET CLONE */}
         {currentSlide === 8 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">APP CLONING DEMO</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Becoming the Builder: Cloning Padlet</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">APP CLONING DEMO</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Becoming the Builder: Cloning Padlet</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <LayoutGrid className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-slate-950/70 rounded-2xl p-8 border border-slate-800 space-y-4">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-100">Shifting Mindsets: Consumer to Builder</h3>
-                <ul className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed font-medium">
-                  <li><strong className="text-amber-300">• The Experiment:</strong> "I didn't have tech skills, but I wanted to know if I could copy a commercial app."</li>
-                  <li><strong className="text-amber-300">• Prompting AI Studio:</strong> "Make a clone of Padlet."</li>
-                  <li><strong className="text-amber-300">• Result:</strong> Functional collaborative digital board built without subscription fees.</li>
+              <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-4 shadow-sm">
+                <h3 className="text-xl md:text-2xl font-bold text-[#002B49]">Shifting Mindsets: Consumer to Builder</h3>
+                <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
+                  <li><strong className="text-[#002B49]">• The Experiment:</strong> "I didn't have tech skills, but I wanted to know if I could copy a commercial app."</li>
+                  <li><strong className="text-[#002B49]">• Prompting AI Studio:</strong> "Make a clone of Padlet."</li>
+                  <li><strong className="text-[#002B49]">• Result:</strong> Functional collaborative digital board built without subscription fees.</li>
                 </ul>
               </div>
 
-              <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-8 border border-amber-400/50 flex flex-col justify-between shadow-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-between shadow-xl">
                 <div className="space-y-3">
-                  <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
+                  <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
                   <h4 className="text-lg font-bold text-slate-100">Inspect Functional Padlet Web Clone</h4>
                   <p className="text-sm text-slate-300">Interactive web application built with AI Studio.</p>
                 </div>
@@ -643,14 +638,14 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   href="https://pdlt.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl shadow-amber-400/20"
+                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl"
                 >
                   Open pdlt.netlify.app <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 9 of {totalSlides}</span>
             </div>
@@ -659,64 +654,64 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 9: TEACHER ACTIVITY 2 */}
         {currentSlide === 9 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">HANDS-ON BUILDER WORKSHOP</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Activity 2: Clone OR Create Your App</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">HANDS-ON BUILDER WORKSHOP</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Activity 2: Clone OR Create Your App</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <AppWindow className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-2">
-              <div className="bg-slate-950/80 rounded-2xl p-6 border border-slate-800 space-y-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-300 text-xs font-bold uppercase">
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 space-y-2 shadow-sm">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#002B49]/10 text-[#002B49] text-xs font-bold uppercase">
                   Track A: Clone an Existing App
                 </div>
-                <h4 className="text-base font-bold text-slate-100">Pick a Tool You Use Daily</h4>
-                <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+                <h4 className="text-base font-bold text-[#002B49]">Pick a Tool You Use Daily</h4>
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
                   Padlet, Quizlet flashcards, classroom timer, spinner wheel, exit ticket form.
                 </p>
               </div>
 
-              <div className="bg-slate-950/80 rounded-2xl p-6 border border-amber-400/30 space-y-2">
+              <div className="bg-slate-50 rounded-2xl p-6 border-2 border-amber-400/60 space-y-2 shadow-sm">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400 text-slate-950 text-xs font-extrabold uppercase">
                   Track B: Create Your Custom Tool
                 </div>
-                <h4 className="text-base font-bold text-slate-100">Use Gemini to Refine Your Prompt</h4>
-                <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+                <h4 className="text-base font-bold text-[#002B49]">Use Gemini to Refine Your Prompt</h4>
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
                   Tell Gemini: <em>"Help me write a detailed prompt for Google AI Studio to build an app for..."</em>
                 </p>
               </div>
             </div>
 
-            <div className="bg-slate-950/60 rounded-xl p-4 border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-4 my-2">
+            <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-4 my-2">
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shrink-0">1</div>
+                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-amber-300 font-black flex items-center justify-center text-xs shrink-0">1</div>
                 <div>
-                  <h5 className="text-xs font-bold text-slate-200">The Shape (Wireframe)</h5>
-                  <p className="text-[11px] text-slate-400">What does it look like on screen?</p>
+                  <h5 className="text-xs font-bold text-[#002B49]">The Shape (Wireframe)</h5>
+                  <p className="text-[11px] text-slate-500">What does it look like on screen?</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shrink-0">2</div>
+                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-amber-300 font-black flex items-center justify-center text-xs shrink-0">2</div>
                 <div>
-                  <h5 className="text-xs font-bold text-slate-200">The Logic (Action)</h5>
-                  <p className="text-[11px] text-slate-400">What happens when a student clicks?</p>
+                  <h5 className="text-xs font-bold text-[#002B49]">The Logic (Action)</h5>
+                  <p className="text-[11px] text-slate-500">What happens when a student clicks?</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shrink-0">3</div>
+                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-amber-300 font-black flex items-center justify-center text-xs shrink-0">3</div>
                 <div>
-                  <h5 className="text-xs font-bold text-slate-200">The Content (Lesson)</h5>
-                  <p className="text-[11px] text-slate-400">Insert your subject matter!</p>
+                  <h5 className="text-xs font-bold text-[#002B49]">The Content (Lesson)</h5>
+                  <p className="text-[11px] text-slate-500">Insert your subject matter!</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-slate-950/90 rounded-2xl border-2 border-amber-400 p-5 md:p-6 shadow-xl space-y-3">
+            <div className="bg-[#002B49] rounded-2xl border-2 border-amber-400 p-5 md:p-6 shadow-xl space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <Terminal className="w-4 h-4 text-amber-400" />
@@ -734,12 +729,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </button>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-amber-300 font-['Fira_Code'] text-sm md:text-base leading-relaxed select-text">
+              <div className="p-4 rounded-xl bg-slate-900 border border-slate-700 text-amber-300 font-['Fira_Code'] text-sm md:text-base leading-relaxed select-text">
                 "Build a single-file functional web application clone of Padlet in HTML, CSS, and JavaScript. Allow users to post notes to a digital bulletin board with custom colors, text editing, and clean responsive layout."
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-3 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-3 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 10 of {totalSlides}</span>
             </div>
@@ -748,44 +743,44 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 10: DEPLOYMENT BLUEPRINT */}
         {currentSlide === 10 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">DEPLOYMENT BLUEPRINT</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">From Prototype to Live Link</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">DEPLOYMENT BLUEPRINT</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">From Prototype to Live Link</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+              <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Workflow className="w-8 h-8" />
               </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto py-6">
-              <div className="bg-slate-950/70 rounded-2xl p-7 border border-slate-800 space-y-4 relative">
-                <div className="w-12 h-12 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-xl">
+              <div className="bg-slate-50 rounded-2xl p-7 border border-slate-200 space-y-4 relative shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-[#002B49] text-amber-300 flex items-center justify-center font-black text-xl">
                   1
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-100 flex items-center gap-2">
-                  <Code className="w-5 h-5 text-amber-400" /> Export Code
+                <h3 className="text-xl font-extrabold text-[#002B49] flex items-center gap-2">
+                  <Code className="w-5 h-5 text-amber-600" /> Export Code
                 </h3>
-                <p className="text-base text-slate-300 leading-relaxed font-medium">
+                <p className="text-base text-slate-600 leading-relaxed font-medium">
                   Copy your single-file HTML code or download the project files directly from Google AI Studio.
                 </p>
               </div>
 
-              <div className="bg-slate-950/70 rounded-2xl p-7 border border-slate-800 space-y-4 relative">
-                <div className="w-12 h-12 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-xl">
+              <div className="bg-slate-50 rounded-2xl p-7 border border-slate-200 space-y-4 relative shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-[#002B49] text-amber-300 flex items-center justify-center font-black text-xl">
                   2
                 </div>
-                <h3 className="text-xl font-extrabold text-slate-100 flex items-center gap-2">
-                  <GitBranch className="w-5 h-5 text-amber-400" /> Push to GitHub
+                <h3 className="text-xl font-extrabold text-[#002B49] flex items-center gap-2">
+                  <GitBranch className="w-5 h-5 text-amber-600" /> Push to GitHub
                 </h3>
-                <p className="text-base text-slate-300 leading-relaxed font-medium">
+                <p className="text-base text-slate-600 leading-relaxed font-medium">
                   Save your code in a GitHub repository (or drag-and-drop your project folder directly).
                 </p>
               </div>
 
-              <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-7 border border-amber-400/60 space-y-4 relative shadow-xl">
-                <div className="w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-7 border border-amber-400/40 space-y-4 relative shadow-xl">
+                <div className="w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-black text-xl">
                   3
                 </div>
                 <h3 className="text-xl font-extrabold text-amber-300 flex items-center gap-2">
@@ -797,19 +792,19 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-slate-950/80 border border-amber-400/30 flex items-center justify-between gap-4">
+            <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex items-center justify-between gap-4 shadow-sm">
               <div className="flex items-center gap-3">
-                <div className="p-3 rounded-xl bg-amber-400/10 text-amber-400">
+                <div className="p-3 rounded-xl bg-[#002B49]/10 text-[#002B49]">
                   <Share2 className="w-6 h-6" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-100">Why Publish a Live URL?</h4>
-                  <p className="text-xs text-slate-400">Students can open your app on iPads, Chromebooks, or phones without logging in.</p>
+                  <h4 className="text-sm font-bold text-[#002B49]">Why Publish a Live URL?</h4>
+                  <p className="text-xs text-slate-500">Students can open your app on iPads, Chromebooks, or phones without logging in.</p>
                 </div>
               </div>
             </div>
 
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
               <span className="font-mono">Slide 11 of {totalSlides}</span>
             </div>
@@ -818,12 +813,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 11: CONCLUSION */}
         {currentSlide === 11 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-slate-900 via-[#001F3F] to-slate-950 rounded-3xl border border-amber-400/40 shadow-2xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-[#002B49] text-slate-50 rounded-3xl border border-amber-400/40 shadow-2xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-sm font-semibold tracking-widest uppercase">
-                <Rocket className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-sm font-extrabold tracking-widest uppercase">
+                <Rocket className="w-4 h-4 text-amber-400" />
                 BUILDING THE WORLD YOU ENVISION
               </div>
 
@@ -839,11 +834,11 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </p>
             </div>
 
-            <div className="flex items-center justify-between pt-6 border-t border-slate-800 text-sm text-slate-400">
+            <div className="flex items-center justify-between pt-6 border-t border-amber-400/30 text-sm text-slate-300">
               <span>Gulliver Prep GSET Workshop</span>
               <button
                 onClick={nextSlide}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl shadow-amber-400/20"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl"
               >
                 Proceed to Feedback Form <ChevronRight className="w-5 h-5" />
               </button>
@@ -851,191 +846,89 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 12: FEEDBACK FORM & ATTENDANCE QR CODE */}
+        {/* SLIDE 12: FEEDBACK FORM & ATTENDANCE QR CODE (UNIFORM HEIGHT MATCHING ALL OTHER SLIDES) */}
         {currentSlide === 12 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-slate-900 via-[#001F3F] to-slate-950 rounded-3xl border border-amber-400/50 shadow-2xl p-6 md:p-8 flex flex-col justify-between relative overflow-hidden">
-            <div className="flex items-center justify-between pb-4 border-b border-slate-800">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-amber-400/60 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">WORKSHOP ATTENDANCE & FEEDBACK</span>
-                <h2 className="text-2xl md:text-4xl font-black text-slate-50 font-['Montserrat'] mt-1">FEEDBACK FORM</h2>
+                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">WORKSHOP ATTENDANCE & FEEDBACK</span>
+                <h2 className="text-3xl md:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">FEEDBACK FORM</h2>
               </div>
-              <div className="p-3 rounded-xl bg-amber-400 text-slate-950 font-black flex items-center gap-2 shadow-lg shadow-amber-400/20">
-                <QrCode className="w-6 h-6" />
-                <span className="text-xs tracking-wider uppercase font-extrabold hidden sm:inline">GSET</span>
+              <div className="p-4 rounded-2xl bg-[#002B49] text-amber-300 font-black flex items-center gap-3 shadow-md">
+                <QrCode className="w-8 h-8 text-amber-400" />
+                <span className="text-sm tracking-wider uppercase font-extrabold hidden sm:inline">GSET</span>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 my-auto py-3 items-center">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 my-auto py-6 items-center">
+              
+              {/* Left Column: QR Code Display Card */}
               <div className="md:col-span-5 flex flex-col items-center justify-center">
-                <div className="bg-white p-4 md:p-5 rounded-2xl shadow-xl border-3 border-amber-400 text-center space-y-2 relative group">
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
+                <div className="bg-slate-50 p-5 md:p-6 rounded-2xl shadow-lg border-2 border-amber-400 text-center space-y-3 relative group">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider shadow">
                     Scan With Phone Camera
                   </div>
                   <img
                     src="/qr-code.png"
                     alt="GSET Workshop Feedback Form QR Code"
-                    className="w-40 h-40 md:w-48 md:h-48 object-contain mx-auto transition-transform duration-300 group-hover:scale-105"
+                    className="w-48 h-48 md:w-52 md:h-52 object-contain mx-auto transition-transform duration-300 group-hover:scale-105"
                   />
-                  <p className="text-xs text-slate-800 font-bold font-mono">Feedback & Attendance Form</p>
+                  <p className="text-xs text-slate-700 font-bold font-mono">Feedback & Attendance Form</p>
                 </div>
               </div>
 
-              <div className="md:col-span-7 space-y-4">
-                <div className="bg-slate-900/90 rounded-xl p-5 border border-slate-800 space-y-2 shadow-md">
-                  <h3 className="text-lg md:text-xl font-medium text-slate-100 font-['Playfair_Display'] italic leading-relaxed">
+              {/* Right Column: Attendance Instructions & Badge */}
+              <div className="md:col-span-7 space-y-6">
+                <div className="bg-[#002B49] text-slate-50 rounded-2xl p-6 md:p-8 border border-amber-400/30 space-y-3 shadow-lg">
+                  <h3 className="text-xl md:text-2xl font-medium text-slate-100 font-['Playfair_Display'] italic leading-relaxed">
                     "Please fill out this form to confirm your attendance and leave valuable feedback for your workshop facilitator."
                   </h3>
                 </div>
 
-                <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-xl bg-slate-950/80 border border-amber-400/40 shadow-md">
+                <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
                   <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                      <ShieldCheck className="w-6 h-6" />
+                    <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                      <ShieldCheck className="w-7 h-7" />
                     </div>
                     <div>
-                      <h4 className="text-base font-black text-slate-100 tracking-wide font-['Montserrat']">GSET</h4>
-                      <p className="text-xs text-slate-400 uppercase tracking-widest font-bold">Supporting Excellence in Teaching</p>
+                      <h4 className="text-lg font-black text-[#002B49] tracking-wide font-['Montserrat']">GSET</h4>
+                      <p className="text-xs text-slate-500 uppercase tracking-widest font-bold">Supporting Excellence in Teaching</p>
                     </div>
                   </div>
 
                   <div className="text-right">
-                    <span className="text-2xl md:text-3xl font-black text-amber-400 font-['Montserrat'] tracking-tight block">
+                    <span className="text-2xl md:text-3xl font-black text-amber-600 font-['Montserrat'] tracking-tight block">
                       THANK YOU!
                     </span>
                   </div>
                 </div>
               </div>
+
             </div>
 
-            <div className="flex items-center justify-between pt-3 border-t border-slate-800 text-xs text-slate-400">
+            <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-sm text-slate-500">
               <div className="flex items-center gap-2">
-                <Heart className="w-3.5 h-3.5 text-red-400" />
-                <span>Thank you for participating in Gulliver Prep GSET</span>
+                <Heart className="w-4 h-4 text-red-500" />
+                <span className="font-semibold text-slate-700">Thank you for participating in Gulliver Prep GSET</span>
               </div>
               <button
-                onClick={() => setCurrentSlide(13)}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold transition text-xs shadow-md"
+                onClick={() => setCurrentSlide(0)}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B49] hover:bg-[#001F3F] text-amber-300 font-bold transition text-sm shadow"
               >
-                View Theme Previews <ArrowRight className="w-4 h-4" />
+                Back to Start
               </button>
-            </div>
-          </div>
-        )}
-
-        {/* SLIDE 13: PREVIEW OPTION 3 (EXECUTIVE SLATE BLUE & CHAMPAGNE) */}
-        {currentSlide === 13 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-[#1E293B] via-[#0F172A] to-[#334155] rounded-3xl border-2 border-amber-400/50 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-700/80">
-              <div>
-                <span className="text-sm font-extrabold text-amber-400 uppercase tracking-widest flex items-center gap-2">
-                  <Palette className="w-4 h-4" /> PREVIEW OPTION 3: EXECUTIVE SLATE BLUE & CHAMPAGNE
-                </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Softer Medium Palette</h2>
-              </div>
-              <div className="p-4 rounded-2xl bg-amber-400/10 text-amber-400 border border-amber-400/30">
-                <Moon className="w-8 h-8" />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-[#0F172A]/90 rounded-2xl p-8 border border-slate-700 space-y-4 shadow-xl">
-                <h3 className="text-xl md:text-2xl font-bold text-slate-100">Why Choose Executive Slate Blue?</h3>
-                <ul className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed font-medium">
-                  <li className="flex items-start gap-3">
-                    <span className="text-amber-400 font-bold text-xl">•</span>
-                    <span><strong className="text-amber-300">Reduced Room Strain:</strong> Softer slate blue background absorbs room glare while keeping contrast comfortable.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-amber-400 font-bold text-xl">•</span>
-                    <span><strong className="text-amber-300">Gulliver Prep Alignment:</strong> Maintains traditional Gulliver Navy tones blended with warm slate and champagne accents.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] rounded-2xl p-8 border border-amber-400/60 flex flex-col justify-between shadow-2xl">
-                <div className="space-y-4">
-                  <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">SAMPLE CARD DISPLAY</span>
-                  <blockquote className="text-xl md:text-2xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
-                    "This palette creates an inviting, academic atmosphere on projector screens."
-                  </blockquote>
-                </div>
-                <div className="pt-6 border-t border-slate-700 flex items-center justify-between">
-                  <span className="text-xs font-bold text-amber-300 uppercase">Medium Contrast Slate Mode</span>
-                  <button onClick={() => setCurrentSlide(14)} className="text-xs font-extrabold text-slate-950 bg-amber-400 hover:bg-amber-300 px-4 py-2 rounded-lg transition flex items-center gap-1.5">
-                    Compare Light Mode <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-sm text-slate-400 flex justify-between pt-4 border-t border-slate-700/80">
-              <span>Theme Option 3 Preview</span>
-              <span className="font-mono">Slide 14 of {totalSlides}</span>
-            </div>
-          </div>
-        )}
-
-        {/* SLIDE 14: PREVIEW OPTION 4 (MODERN LIGHT MODE - OFF-WHITE & NAVY) */}
-        {currentSlide === 14 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-[#F8FAFC] via-slate-100 to-[#F1F5F9] text-slate-900 rounded-3xl border-2 border-slate-300 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-300">
-              <div>
-                <span className="text-sm font-extrabold text-[#002B49] uppercase tracking-widest flex items-center gap-2">
-                  <Sun className="w-4 h-4 text-amber-500" /> PREVIEW OPTION 4: MODERN LIGHT MODE (OFF-WHITE & NAVY)
-                </span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Crisp High-Visibility Mode</h2>
-              </div>
-              <div className="p-4 rounded-2xl bg-amber-400/20 text-[#002B49] border border-amber-400/40">
-                <Sun className="w-8 h-8 text-amber-600" />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
-              <div className="bg-white rounded-2xl p-8 border border-slate-200 space-y-4 shadow-lg">
-                <h3 className="text-xl md:text-2xl font-bold text-[#002B49]">Why Choose Modern Light Mode?</h3>
-                <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
-                  <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold text-xl">•</span>
-                    <span><strong className="text-[#002B49]">100% Bright Room Immunity:</strong> Extremely easy to read even under bright overhead lights or unshaded windows.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold text-xl">•</span>
-                    <span><strong className="text-[#002B49]">Crisp Gulliver Navy:</strong> Uses deep Gulliver Navy text (`#002B49`) on crisp white cards for maximum legibility.</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 border-2 border-amber-400 flex flex-col justify-between shadow-xl">
-                <div className="space-y-4">
-                  <span className="text-xs font-extrabold text-amber-600 uppercase tracking-widest">SAMPLE CARD DISPLAY</span>
-                  <blockquote className="text-xl md:text-2xl font-medium text-slate-800 italic font-['Playfair_Display'] leading-relaxed">
-                    "Clean, classic presentation style with high contrast text and vibrant gold highlights."
-                  </blockquote>
-                </div>
-                <div className="pt-6 border-t border-slate-200 flex items-center justify-between">
-                  <span className="text-xs font-bold text-slate-600 uppercase">Light Classroom Mode</span>
-                  <button onClick={() => setCurrentSlide(0)} className="text-xs font-extrabold text-white bg-[#002B49] hover:bg-[#001F3F] px-4 py-2 rounded-lg transition flex items-center gap-1.5 shadow">
-                    Back to Start <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-300">
-              <span>Theme Option 4 Preview</span>
-              <span className="font-mono">Slide 15 of {totalSlides}</span>
             </div>
           </div>
         )}
 
       </main>
 
-      {/* Bottom Floating Control Bar */}
-      <footer className="relative z-30 flex items-center justify-between px-6 py-4 bg-slate-900/90 backdrop-blur-md border-t border-slate-800/80">
+      {/* Bottom Floating Control Bar (Light Mode) */}
+      <footer className="relative z-30 flex items-center justify-between px-6 py-4 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-sm">
         <button
           onClick={prevSlide}
           disabled={currentSlide === 0}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 disabled:opacity-30 disabled:pointer-events-none text-slate-200 text-sm font-semibold transition border border-slate-700"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 disabled:opacity-30 disabled:pointer-events-none text-slate-800 text-sm font-semibold transition border border-slate-300"
         >
           <ChevronLeft className="w-5 h-5" /> Previous
         </button>
@@ -1048,13 +941,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
                 className={`h-2.5 rounded-full transition-all duration-300 ${
-                  currentSlide === idx ? 'w-10 bg-amber-400' : 'w-2.5 bg-slate-700 hover:bg-slate-600'
+                  currentSlide === idx ? 'w-10 bg-[#002B49]' : 'w-2.5 bg-slate-300 hover:bg-slate-400'
                 }`}
                 title={`Go to slide ${idx + 1}`}
               />
             ))}
           </div>
-          <span className="text-sm text-slate-400 font-mono font-bold">
+          <span className="text-sm text-slate-600 font-mono font-bold">
             {currentSlide + 1} / {totalSlides}
           </span>
         </div>
@@ -1062,7 +955,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
         <button
           onClick={nextSlide}
           disabled={currentSlide === totalSlides - 1}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-400 hover:bg-amber-300 disabled:opacity-30 disabled:pointer-events-none text-slate-950 text-sm font-extrabold transition shadow-md shadow-amber-400/10"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B49] hover:bg-[#001F3F] disabled:opacity-30 disabled:pointer-events-none text-amber-300 text-sm font-extrabold transition shadow-md"
         >
           Next <ChevronRight className="w-5 h-5" />
         </button>
