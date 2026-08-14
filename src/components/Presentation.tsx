@@ -43,7 +43,10 @@ import {
   Workflow,
   MessageSquare,
   HelpCircle,
-  MessageSquareQuote
+  MessageSquareQuote,
+  RefreshCw,
+  Zap,
+  Play
 } from 'lucide-react';
 
 interface PresentationProps {
@@ -56,7 +59,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [copiedPrompt, setCopiedPrompt] = useState<string | null>(null);
 
-  const totalSlides = 16;
+  const totalSlides = 18;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev < totalSlides - 1 ? prev + 1 : prev));
@@ -111,15 +114,17 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
     "4. Experiment 1: Scrollytelling",
     "5. Discussion: Passion Projects in Curriculum",
     "6. Teacher Activity 1: The One-Stop Shop",
-    "7. Visual Learning: Awe & Wonder",
-    "8. Discussion: Unlocking Hard-to-Grasp Concepts",
-    "9. Experiment 2: Black Hole Simulation",
-    "10. Becoming the Builder: Padlet Clone",
-    "11. Discussion: Mapping Your EdTech Toolkit",
-    "12. Teacher Activity 2: Clone OR Create Your App",
-    "13. Deployment Blueprint: GitHub & Netlify/Vercel",
-    "14. Conclusion: Building What You Envision",
-    "15. Feedback Form & Attendance QR Code"
+    "7. TRANSITION: Activity 1 Debrief & Share",
+    "8. Visual Learning: Awe & Wonder",
+    "9. Discussion: Unlocking Hard-to-Grasp Concepts",
+    "10. Experiment 2: Black Hole Simulation",
+    "11. Becoming the Builder: Padlet Clone",
+    "12. Discussion: Mapping Your EdTech Toolkit",
+    "13. Teacher Activity 2: Clone OR Create Your App",
+    "14. TRANSITION: Activity 2 Showcase & Publishing Pivot",
+    "15. Deployment Blueprint: GitHub & Netlify/Vercel",
+    "16. Conclusion: Building What You Envision",
+    "17. Feedback Form & Attendance QR Code"
   ];
 
   return (
@@ -487,7 +492,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 5: NEW DISCUSSION 1 (BEFORE ACTIVITY 1) */}
+        {/* SLIDE 5: DISCUSSION 1 (BEFORE ACTIVITY 1) */}
         {currentSlide === 5 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
@@ -609,8 +614,62 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 7: VISUAL LEARNING - AWE & WONDER */}
+        {/* SLIDE 7: NEW TRANSITION SLIDE 1 (POST ACTIVITY 1 TRANSITION) */}
         {currentSlide === 7 && (
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-[#002B49] text-white rounded-3xl border border-blue-900 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div className="flex items-center justify-between pb-6 border-b border-blue-800">
+              <div>
+                <span className="text-xs font-extrabold text-blue-300 uppercase tracking-widest bg-blue-600/30 border border-blue-400/30 px-3.5 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <RefreshCw className="w-4 h-4 text-blue-300" /> TRANSITION & DEBRIEF
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-2">Activity 1 Reflection & Pivot</h2>
+              </div>
+              <div className="p-4 rounded-2xl bg-blue-600/30 text-blue-200 border border-blue-400/30">
+                <Zap className="w-8 h-8" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-4">
+              <div className="bg-slate-900/90 rounded-2xl p-7 border border-slate-700 space-y-4 shadow-lg">
+                <span className="text-xs font-extrabold text-blue-300 uppercase tracking-wider block">1. ACTIVITY 1 DEBRIEF</span>
+                <h3 className="text-xl font-bold text-white">Share Your Prototype!</h3>
+                <ul className="space-y-3 text-sm md:text-base text-slate-300 leading-relaxed font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>How did AI Studio interpret your lesson prompt?</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Did the scrolling motion bring the narrative to life?</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-900/40 rounded-2xl p-7 border border-blue-700/60 space-y-4 shadow-lg">
+                <span className="text-xs font-extrabold text-blue-200 uppercase tracking-wider block">2. PIVOT TO PART 2</span>
+                <h3 className="text-xl font-bold text-white">Moving to 3D & Visual Simulations</h3>
+                <p className="text-sm md:text-base text-slate-200 leading-relaxed font-medium">
+                  Scrollytelling transformed linear text into motion. Next, we move from text animation into **interactive 3D physics models & visual awe!**
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-4 border-t border-blue-800 text-sm text-blue-200">
+              <span>Gulliver Prep GSET Workshop</span>
+              <button
+                onClick={nextSlide}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold transition shadow-lg text-sm"
+              >
+                Proceed to Part 2: Visual Learning <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* SLIDE 8: VISUAL LEARNING - AWE & WONDER */}
+        {currentSlide === 8 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -641,13 +700,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 8 of {totalSlides}</span>
+              <span className="font-mono">Slide 9 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 8: NEW DISCUSSION 2 (BEFORE EXPERIMENT 2) */}
-        {currentSlide === 8 && (
+        {/* SLIDE 9: DISCUSSION 2 (BEFORE EXPERIMENT 2) */}
+        {currentSlide === 9 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -692,13 +751,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-sm text-slate-500">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 9 of {totalSlides}</span>
+              <span className="font-mono">Slide 10 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 9: EXPERIMENT 2 - BLACK HOLE SIMULATION */}
-        {currentSlide === 9 && (
+        {/* SLIDE 10: EXPERIMENT 2 - BLACK HOLE SIMULATION */}
+        {currentSlide === 10 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -739,13 +798,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 10 of {totalSlides}</span>
+              <span className="font-mono">Slide 11 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 10: BECOMING THE BUILDER - PADLET CLONE */}
-        {currentSlide === 10 && (
+        {/* SLIDE 11: BECOMING THE BUILDER - PADLET CLONE */}
+        {currentSlide === 11 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -786,13 +845,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 11 of {totalSlides}</span>
+              <span className="font-mono">Slide 12 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 11: NEW DISCUSSION 3 (BEFORE ACTIVITY 2) */}
-        {currentSlide === 11 && (
+        {/* SLIDE 12: DISCUSSION 3 (BEFORE ACTIVITY 2) */}
+        {currentSlide === 12 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -837,13 +896,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-sm text-slate-500">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 12 of {totalSlides}</span>
+              <span className="font-mono">Slide 13 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 12: TEACHER ACTIVITY 2 */}
-        {currentSlide === 12 && (
+        {/* SLIDE 13: TEACHER ACTIVITY 2 */}
+        {currentSlide === 13 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div>
@@ -926,13 +985,67 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-3 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 13 of {totalSlides}</span>
+              <span className="font-mono">Slide 14 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 13: DEPLOYMENT BLUEPRINT */}
-        {currentSlide === 13 && (
+        {/* SLIDE 14: NEW TRANSITION SLIDE 2 (POST ACTIVITY 2 TRANSITION) */}
+        {currentSlide === 14 && (
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-[#002B49] text-white rounded-3xl border border-blue-900 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div className="flex items-center justify-between pb-6 border-b border-blue-800">
+              <div>
+                <span className="text-xs font-extrabold text-blue-300 uppercase tracking-widest bg-blue-600/30 border border-blue-400/30 px-3.5 py-1.5 rounded-full inline-flex items-center gap-2">
+                  <Workflow className="w-4 h-4 text-blue-300" /> TRANSITION & PUBLISHING PIVOT
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-2">Activity 2 Showcase & Launch</h2>
+              </div>
+              <div className="p-4 rounded-2xl bg-blue-600/30 text-blue-200 border border-blue-400/30">
+                <Rocket className="w-8 h-8" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-4">
+              <div className="bg-slate-900/90 rounded-2xl p-7 border border-slate-700 space-y-4 shadow-lg">
+                <span className="text-xs font-extrabold text-blue-300 uppercase tracking-wider block">1. APP SHOWCASE DEBRIEF</span>
+                <h3 className="text-xl font-bold text-white">Test & Share Your App Prototype!</h3>
+                <ul className="space-y-3 text-sm md:text-base text-slate-300 leading-relaxed font-medium">
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>Did you clone a familiar tool or build a new custom solution?</span>
+                  </li>
+                  <li className="flex items-start gap-2.5">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400 shrink-0 mt-0.5" />
+                    <span>How did the 3-Stage Framework (Shape &rarr; Logic &rarr; Content) guide your build?</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-blue-900/40 rounded-2xl p-7 border border-blue-700/60 space-y-4 shadow-lg">
+                <span className="text-xs font-extrabold text-blue-200 uppercase tracking-wider block">2. THE DEPLOYMENT PIVOT</span>
+                <h3 className="text-xl font-bold text-white">From Code File to Permanent Live URL</h3>
+                <p className="text-sm md:text-base text-slate-200 leading-relaxed font-medium">
+                  You built a functional app! Now we transition to **publishing it live** so your students can open it on Chromebooks or iPads anywhere!
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between pt-4 border-t border-blue-800 text-sm text-blue-200">
+              <span>Gulliver Prep GSET Workshop</span>
+              <button
+                onClick={nextSlide}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold transition shadow-lg text-sm"
+              >
+                Proceed to Deployment Blueprint <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* SLIDE 15: DEPLOYMENT BLUEPRINT */}
+        {currentSlide === 15 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
@@ -996,13 +1109,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-200">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 14 of {totalSlides}</span>
+              <span className="font-mono">Slide 16 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 14: CONCLUSION */}
-        {currentSlide === 14 && (
+        {/* SLIDE 16: CONCLUSION */}
+        {currentSlide === 16 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#002B49]/5 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -1039,8 +1152,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 15: FEEDBACK FORM & ATTENDANCE QR CODE */}
-        {currentSlide === 15 && (
+        {/* SLIDE 17: FEEDBACK FORM & ATTENDANCE QR CODE */}
+        {currentSlide === 17 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
