@@ -119,15 +119,17 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
   return (
     <div className="relative min-h-screen bg-slate-100 text-slate-900 flex flex-col justify-between select-none overflow-x-hidden font-sans">
       
-      {/* Top Bar Header (Light Mode) */}
+      {/* Top Bar Header */}
       <header className="relative z-30 flex items-center justify-between px-6 py-4 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-lg bg-[#002B49] text-amber-400 flex items-center justify-center font-black text-base shadow-md">
-            GP
-          </div>
+          <img 
+            src="/gulliver-logo.png" 
+            alt="Gulliver Prep Logo" 
+            className="w-10 h-10 object-contain rounded-md"
+          />
           <div>
             <h1 className="text-base md:text-lg font-bold tracking-wide text-[#002B49] font-['Montserrat']">
-              GULLIVER PREP <span className="text-amber-600 font-normal">| GSET WORKSHOP</span>
+              GULLIVER PREP <span className="text-slate-500 font-normal">| GSET WORKSHOP</span>
             </h1>
             <p className="text-xs text-slate-500 hidden sm:block">From Consumer to Creator: A Teacher's Guide to Google AI Studio</p>
           </div>
@@ -145,7 +147,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="flex items-center gap-2 text-xs md:text-sm px-3.5 py-1.5 rounded-lg bg-[#002B49] hover:bg-[#001F3F] text-amber-300 font-bold transition shadow-sm"
+            className="flex items-center gap-2 text-xs md:text-sm px-3.5 py-1.5 rounded-lg bg-[#002B49] hover:bg-[#001F3F] text-white font-bold transition shadow-sm"
           >
             <Menu className="w-4 h-4" />
             <span className="hidden md:inline">Slide Directory ({currentSlide + 1}/{totalSlides})</span>
@@ -180,12 +182,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 }}
                 className={`w-full text-left text-xs px-3 py-2 rounded-lg transition flex items-center justify-between ${
                   currentSlide === idx
-                    ? 'bg-[#002B49] text-amber-300 font-bold'
+                    ? 'bg-[#002B49] text-white font-bold'
                     : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
                 }`}
               >
                 <span className="truncate">{title}</span>
-                {currentSlide === idx && <div className="w-1.5 h-1.5 rounded-full bg-amber-400"></div>}
+                {currentSlide === idx && <div className="w-1.5 h-1.5 rounded-full bg-blue-400"></div>}
               </button>
             ))}
           </div>
@@ -198,15 +200,15 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
         {/* SLIDE 0: TITLE SLIDE */}
         {currentSlide === 0 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#002B49]/5 rounded-full blur-3xl pointer-events-none"></div>
             
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/40 text-amber-800 text-sm font-extrabold tracking-widest uppercase">
-                <Sparkles className="w-4 h-4 text-amber-600" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#002B49]/10 border border-[#002B49]/20 text-[#002B49] text-sm font-extrabold tracking-widest uppercase">
+                <Sparkles className="w-4 h-4 text-[#002B49]" />
                 Gulliver Prep GSET Workshop Presentation
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-[#002B49] tracking-tight leading-tight font-['Montserrat'] max-w-5xl">
-                From Consumer to <span className="text-amber-600 underline decoration-amber-400 decoration-wavy decoration-2">Creator</span>
+                From Consumer to <span className="text-blue-700 underline decoration-[#002B49] decoration-wavy decoration-2">Creator</span>
               </h1>
               <p className="text-2xl md:text-3xl font-medium text-slate-700 font-['Playfair_Display'] italic max-w-3xl">
                 A Teacher's Guide to Google AI Studio
@@ -239,12 +241,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="flex items-center justify-between pt-6 border-t border-slate-200 text-sm text-slate-500">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-amber-600" />
+                <ShieldCheck className="w-5 h-5 text-[#002B49]" />
                 <span className="font-semibold text-slate-700">Gulliver Prep Educational Technology (GSET)</span>
               </div>
               <button 
                 onClick={nextSlide}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#002B49] hover:bg-[#001F3F] text-amber-300 font-extrabold text-base transition shadow-lg"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#002B49] hover:bg-[#001F3F] text-white font-extrabold text-base transition shadow-lg"
               >
                 Begin Presentation <ArrowRight className="w-5 h-5" />
               </button>
@@ -257,8 +259,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">THE PEDAGOGICAL SHIFT</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Overnight EdTech Innovators</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">THE PEDAGOGICAL SHIFT</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Overnight EdTech Innovators</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Globe className="w-8 h-8" />
@@ -268,34 +270,34 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-6 shadow-sm">
                 <h3 className="text-xl md:text-2xl font-bold text-[#002B49] flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-amber-500"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#002B49]"></div>
                   The COVID-19 Acceleration
                 </h3>
                 <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold text-xl">•</span>
+                    <span className="text-[#002B49] font-bold text-xl">•</span>
                     <span><strong className="text-[#002B49] font-semibold">Forced Overnight Mastery:</strong> Teachers instantly became experts in Google Classroom, Teams, Zoom, Meet, and Skype.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold text-xl">•</span>
+                    <span className="text-[#002B49] font-bold text-xl">•</span>
                     <span><strong className="text-[#002B49] font-semibold">Continuous Digital Sharing:</strong> Lessons evolved into rapid sharing of Docs, PDFs, slides, and video links.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <span className="text-amber-600 font-bold text-xl">•</span>
+                    <span className="text-[#002B49] font-bold text-xl">•</span>
                     <span><strong className="text-[#002B49] font-semibold">The Digital Return:</strong> Returning to physical spaces meant join codes, QR codes, and constant presentations.</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/30 flex flex-col justify-between relative overflow-hidden shadow-xl">
-                <Quote className="w-16 h-16 text-amber-400/20 absolute top-6 right-6" />
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-slate-800 flex flex-col justify-between relative overflow-hidden shadow-xl">
+                <Quote className="w-16 h-16 text-blue-300/20 absolute top-6 right-6" />
                 <div className="space-y-6 relative z-10">
-                  <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">CORE PEDAGOGICAL INSIGHT</span>
+                  <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest">CORE PEDAGOGICAL INSIGHT</span>
                   <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
                     "We didn't just adopt technology—we survived and adapted through it. Every teacher proved they could master complex digital tools under pressure."
                   </blockquote>
                 </div>
-                <div className="pt-6 border-t border-amber-400/30 text-sm md:text-base text-amber-300 font-bold">
+                <div className="pt-6 border-t border-blue-800 text-sm md:text-base text-blue-200 font-bold">
                   Now, the challenge shifts from survival to intentional creation.
                 </div>
               </div>
@@ -313,8 +315,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">SUBSCRIPTION FATIGUE</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">The Search for Tangible Tech</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">SUBSCRIPTION FATIGUE</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">The Search for Tangible Tech</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Layers className="w-8 h-8" />
@@ -332,8 +334,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </p>
               </div>
 
-              <div className="bg-slate-50 rounded-2xl p-7 border-2 border-amber-400/60 space-y-4 shadow-md">
-                <div className="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-700 flex items-center justify-center mb-3">
+              <div className="bg-slate-50 rounded-2xl p-7 border-2 border-[#002B49]/40 space-y-4 shadow-md">
+                <div className="w-12 h-12 rounded-xl bg-[#002B49]/10 text-[#002B49] flex items-center justify-center mb-3">
                   <Target className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-extrabold text-[#002B49]">The Search for Unity</h3>
@@ -342,11 +344,11 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </p>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-7 border border-amber-400/40 space-y-4 shadow-xl">
-                <div className="w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center mb-3 font-bold">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-7 border border-blue-900/40 space-y-4 shadow-xl">
+                <div className="w-12 h-12 rounded-xl bg-white text-[#002B49] flex items-center justify-center mb-3 font-bold">
                   <Sparkles className="w-6 h-6" />
                 </div>
-                <h3 className="text-xl font-extrabold text-amber-300">Tangible Experience</h3>
+                <h3 className="text-xl font-extrabold text-blue-200">Tangible Experience</h3>
                 <p className="text-base text-slate-100 leading-relaxed font-medium">
                   Moving beyond flat slideshows. Seeking technology that feels tangible—offering immersive, tactile student experiences.
                 </p>
@@ -365,8 +367,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">DISCOVERING GOOGLE AI STUDIO</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Stepping Into the Unknown</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">DISCOVERING GOOGLE AI STUDIO</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Stepping Into the Unknown</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Compass className="w-8 h-8" />
@@ -376,7 +378,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
               <div className="bg-slate-50 rounded-2xl p-8 border border-slate-200 space-y-5 shadow-sm">
                 <h3 className="text-xl md:text-2xl font-bold text-[#002B49] flex items-center gap-3">
-                  <Lightbulb className="w-6 h-6 text-amber-600" />
+                  <Lightbulb className="w-6 h-6 text-[#002B49]" />
                   The Desire to Create
                 </h3>
                 <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium">
@@ -384,13 +386,13 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </p>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 space-y-6 shadow-xl">
-                <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">THE FEAR FACTOR</span>
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-slate-800 space-y-6 shadow-xl">
+                <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest">THE FEAR FACTOR</span>
                 <blockquote className="text-xl md:text-2xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
                   "Truth be told, I was scared because I didn't have a technology background."
                 </blockquote>
-                <div className="p-5 rounded-xl bg-slate-900/80 border border-slate-700 text-sm md:text-base text-amber-300 space-y-2">
-                  <span className="font-extrabold text-amber-400 block uppercase tracking-wider">Breakthrough Insight</span>
+                <div className="p-5 rounded-xl bg-slate-900/90 border border-slate-700 text-sm md:text-base text-blue-200 space-y-2">
+                  <span className="font-extrabold text-white block uppercase tracking-wider">Breakthrough Insight</span>
                   <p className="leading-relaxed text-slate-200">AI Studio removes technical syntax barriers. Natural language prompting becomes your code.</p>
                 </div>
               </div>
@@ -408,8 +410,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">SCROLLYTELLING DEMO</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Experiment 1: Literature in Motion</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">SCROLLYTELLING DEMO</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Experiment 1: Literature in Motion</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <BookOpen className="w-8 h-8" />
@@ -426,9 +428,9 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </ul>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-between shadow-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-slate-800 flex flex-col justify-between shadow-xl">
                 <div className="space-y-3">
-                  <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
+                  <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
                   <h4 className="text-lg font-bold text-slate-100">Experience the Scrollytelling Prototype</h4>
                   <p className="text-sm text-slate-300">Interactive literary web experience explaining classic literature.</p>
                 </div>
@@ -436,7 +438,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   href="https://scrollytell.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl"
+                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-base transition shadow-xl"
                 >
                   Open scrollytell.netlify.app <ExternalLink className="w-5 h-5" />
                 </a>
@@ -455,8 +457,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">HANDS-ON BUILDING SESSION</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Activity 1: The One-Stop Shop</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">HANDS-ON BUILDING SESSION</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Activity 1: The One-Stop Shop</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Wand2 className="w-8 h-8" />
@@ -465,34 +467,34 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
               <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-1">
-                <span className="text-xl font-black text-amber-600 font-['Montserrat']">01</span>
+                <span className="text-xl font-black text-[#002B49] font-['Montserrat']">01</span>
                 <h4 className="text-sm font-bold text-[#002B49]">Select Concept</h4>
                 <p className="text-xs text-slate-500">Identify a topic you are teaching.</p>
               </div>
 
-              <div className="bg-slate-50 rounded-xl p-4 border-2 border-amber-400/60 space-y-1">
-                <span className="text-xl font-black text-amber-600 font-['Montserrat']">02</span>
+              <div className="bg-slate-50 rounded-xl p-4 border-2 border-[#002B49]/40 space-y-1">
+                <span className="text-xl font-black text-[#002B49] font-['Montserrat']">02</span>
                 <h4 className="text-sm font-bold text-[#002B49]">Gemini Prompt</h4>
                 <p className="text-xs text-slate-500">Open Gemini to refine your prompt.</p>
               </div>
 
               <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-1">
-                <span className="text-xl font-black text-amber-600 font-['Montserrat']">03</span>
+                <span className="text-xl font-black text-[#002B49] font-['Montserrat']">03</span>
                 <h4 className="text-sm font-bold text-[#002B49]">AI Generation</h4>
                 <p className="text-xs text-slate-500">Ask AI Studio to create HTML page.</p>
               </div>
 
               <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 space-y-1">
-                <span className="text-xl font-black text-amber-600 font-['Montserrat']">04</span>
+                <span className="text-xl font-black text-[#002B49] font-['Montserrat']">04</span>
                 <h4 className="text-sm font-bold text-[#002B49]">Share Screen</h4>
                 <p className="text-xs text-slate-500">Share & showcase with peers.</p>
               </div>
             </div>
 
-            <div className="bg-[#002B49] rounded-2xl border-2 border-amber-400 p-6 md:p-8 my-2 shadow-xl space-y-4">
+            <div className="bg-[#002B49] rounded-2xl border border-slate-800 p-6 md:p-8 my-2 shadow-xl space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-amber-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider flex items-center gap-1.5">
+                  <div className="p-2 rounded-lg bg-blue-600 text-white font-extrabold text-xs uppercase tracking-wider flex items-center gap-1.5">
                     <Terminal className="w-4 h-4" /> Example Prompt for AI Studio
                   </div>
                   <span className="text-xs text-slate-300 hidden sm:inline">Use this prompt structure to build your scrollytelling page</span>
@@ -502,14 +504,14 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                     "Create an interactive, engaging scrollytelling HTML page for a high school literature lesson on Tim O'Brien's 'The Things They Carried'. As the user scrolls down, animate visual cards that unpack the physical and emotional weight of each item carried by the soldiers. Include clear section headers, modern typography, and smooth CSS transitions.",
                     "activity1"
                   )}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 border border-amber-400/40 text-xs font-bold transition"
+                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white border border-blue-400/40 text-xs font-bold transition"
                 >
                   <Copy className="w-4 h-4" />
                   {copiedPrompt === "activity1" ? "Prompt Copied!" : "Copy Example Prompt"}
                 </button>
               </div>
 
-              <div className="p-5 rounded-xl bg-slate-900 border border-slate-700 text-amber-300 font-['Fira_Code'] font-normal text-base md:text-lg leading-relaxed select-text">
+              <div className="p-5 rounded-xl bg-slate-900 border border-slate-700 text-blue-300 font-['Fira_Code'] font-normal text-base md:text-lg leading-relaxed select-text">
                 "Create an interactive, engaging scrollytelling HTML page for a lesson concept. As the user scrolls down, animate visual cards that unpack key narrative ideas with clean CSS transitions, high-contrast typography, and zero external frameworks."
               </div>
             </div>
@@ -526,8 +528,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">PEDAGOGICAL PHILOSOPHY</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">The Power of Visual Learning</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">PEDAGOGICAL PHILOSOPHY</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">The Power of Visual Learning</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Telescope className="w-8 h-8" />
@@ -543,8 +545,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </ul>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-center space-y-6 shadow-xl">
-                <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">CREATING AWE & WONDER</span>
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-slate-800 flex flex-col justify-center space-y-6 shadow-xl">
+                <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest">CREATING AWE & WONDER</span>
                 <blockquote className="text-xl md:text-2xl lg:text-3xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
                   "When creating edtech, it is not so much about being clean or corporate. It is about creating something memorable—something that evokes awe and wonder in students."
                 </blockquote>
@@ -563,8 +565,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">INTERACTIVE SIMULATION</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Experiment 2: Visualizing the Impossible</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">INTERACTIVE SIMULATION</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Experiment 2: Visualizing the Impossible</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Orbit className="w-8 h-8" />
@@ -581,9 +583,9 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </ul>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-between shadow-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-slate-800 flex flex-col justify-between shadow-xl">
                 <div className="space-y-3">
-                  <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
+                  <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
                   <h4 className="text-lg font-bold text-slate-100">Inspect 3D Black Hole Canvas</h4>
                   <p className="text-sm text-slate-300">Interactive WebGL / HTML Canvas Physics Demo.</p>
                 </div>
@@ -591,7 +593,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   href="https://blackholedemo.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl"
+                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-base transition shadow-xl"
                 >
                   Open blackholedemo.netlify.app <ExternalLink className="w-5 h-5" />
                 </a>
@@ -610,8 +612,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">APP CLONING DEMO</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Becoming the Builder: Cloning Padlet</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">APP CLONING DEMO</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Becoming the Builder: Cloning Padlet</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <LayoutGrid className="w-8 h-8" />
@@ -628,9 +630,9 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </ul>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-amber-400/40 flex flex-col justify-between shadow-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-8 border border-slate-800 flex flex-col justify-between shadow-xl">
                 <div className="space-y-3">
-                  <span className="text-xs font-extrabold text-amber-400 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
+                  <span className="text-xs font-extrabold text-blue-200 uppercase tracking-widest">EXPLORE LIVE DEMO</span>
                   <h4 className="text-lg font-bold text-slate-100">Inspect Functional Padlet Web Clone</h4>
                   <p className="text-sm text-slate-300">Interactive web application built with AI Studio.</p>
                 </div>
@@ -638,7 +640,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   href="https://pdlt.netlify.app/"
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl"
+                  className="mt-6 inline-flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-base transition shadow-xl"
                 >
                   Open pdlt.netlify.app <ExternalLink className="w-5 h-5" />
                 </a>
@@ -657,8 +659,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-4 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">HANDS-ON BUILDER WORKSHOP</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Activity 2: Clone OR Create Your App</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">HANDS-ON BUILDER WORKSHOP</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">Activity 2: Clone OR Create Your App</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <AppWindow className="w-8 h-8" />
@@ -667,7 +669,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-2">
               <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 space-y-2 shadow-sm">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#002B49]/10 text-[#002B49] text-xs font-bold uppercase">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#002B49] text-white text-xs font-bold uppercase">
                   Track A: Clone an Existing App
                 </div>
                 <h4 className="text-base font-bold text-[#002B49]">Pick a Tool You Use Daily</h4>
@@ -676,8 +678,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </p>
               </div>
 
-              <div className="bg-slate-50 rounded-2xl p-6 border-2 border-amber-400/60 space-y-2 shadow-sm">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400 text-slate-950 text-xs font-extrabold uppercase">
+              <div className="bg-slate-50 rounded-2xl p-6 border-2 border-[#002B49]/40 space-y-2 shadow-sm">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-blue-600 text-white text-xs font-extrabold uppercase">
                   Track B: Create Your Custom Tool
                 </div>
                 <h4 className="text-base font-bold text-[#002B49]">Use Gemini to Refine Your Prompt</h4>
@@ -689,21 +691,21 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-4 my-2">
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-amber-300 font-black flex items-center justify-center text-xs shrink-0">1</div>
+                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-white font-black flex items-center justify-center text-xs shrink-0">1</div>
                 <div>
                   <h5 className="text-xs font-bold text-[#002B49]">The Shape (Wireframe)</h5>
                   <p className="text-[11px] text-slate-500">What does it look like on screen?</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-amber-300 font-black flex items-center justify-center text-xs shrink-0">2</div>
+                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-white font-black flex items-center justify-center text-xs shrink-0">2</div>
                 <div>
                   <h5 className="text-xs font-bold text-[#002B49]">The Logic (Action)</h5>
                   <p className="text-[11px] text-slate-500">What happens when a student clicks?</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-amber-300 font-black flex items-center justify-center text-xs shrink-0">3</div>
+                <div className="w-7 h-7 rounded-lg bg-[#002B49] text-white font-black flex items-center justify-center text-xs shrink-0">3</div>
                 <div>
                   <h5 className="text-xs font-bold text-[#002B49]">The Content (Lesson)</h5>
                   <p className="text-[11px] text-slate-500">Insert your subject matter!</p>
@@ -711,10 +713,10 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            <div className="bg-[#002B49] rounded-2xl border-2 border-amber-400 p-5 md:p-6 shadow-xl space-y-3">
+            <div className="bg-[#002B49] rounded-2xl border border-slate-800 p-5 md:p-6 shadow-xl space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <Terminal className="w-4 h-4 text-amber-400" />
+                  <Terminal className="w-4 h-4 text-blue-300" />
                   <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">Example Prompt for AI Studio</span>
                 </div>
                 <button
@@ -722,14 +724,14 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                     "Build a single-file functional web application clone of Padlet in HTML, CSS, and JavaScript. Allow users to post notes to a digital bulletin board with custom colors, text editing, and clean responsive layout.",
                     "activity2"
                   )}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 border border-amber-400/40 text-xs font-bold transition"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold transition"
                 >
                   <Copy className="w-3.5 h-3.5" />
                   {copiedPrompt === "activity2" ? "Copied!" : "Copy Prompt"}
                 </button>
               </div>
 
-              <div className="p-4 rounded-xl bg-slate-900 border border-slate-700 text-amber-300 font-['Fira_Code'] text-sm md:text-base leading-relaxed select-text">
+              <div className="p-4 rounded-xl bg-slate-900 border border-slate-700 text-blue-300 font-['Fira_Code'] text-sm md:text-base leading-relaxed select-text">
                 "Build a single-file functional web application clone of Padlet in HTML, CSS, and JavaScript. Allow users to post notes to a digital bulletin board with custom colors, text editing, and clean responsive layout."
               </div>
             </div>
@@ -746,8 +748,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">DEPLOYMENT BLUEPRINT</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">From Prototype to Live Link</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">DEPLOYMENT BLUEPRINT</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">From Prototype to Live Link</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-100 text-[#002B49] border border-slate-200">
                 <Workflow className="w-8 h-8" />
@@ -756,11 +758,11 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto py-6">
               <div className="bg-slate-50 rounded-2xl p-7 border border-slate-200 space-y-4 relative shadow-sm">
-                <div className="w-12 h-12 rounded-xl bg-[#002B49] text-amber-300 flex items-center justify-center font-black text-xl">
+                <div className="w-12 h-12 rounded-xl bg-[#002B49] text-white flex items-center justify-center font-black text-xl">
                   1
                 </div>
                 <h3 className="text-xl font-extrabold text-[#002B49] flex items-center gap-2">
-                  <Code className="w-5 h-5 text-amber-600" /> Export Code
+                  <Code className="w-5 h-5 text-blue-600" /> Export Code
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed font-medium">
                   Copy your single-file HTML code or download the project files directly from Google AI Studio.
@@ -768,22 +770,22 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
 
               <div className="bg-slate-50 rounded-2xl p-7 border border-slate-200 space-y-4 relative shadow-sm">
-                <div className="w-12 h-12 rounded-xl bg-[#002B49] text-amber-300 flex items-center justify-center font-black text-xl">
+                <div className="w-12 h-12 rounded-xl bg-[#002B49] text-white flex items-center justify-center font-black text-xl">
                   2
                 </div>
                 <h3 className="text-xl font-extrabold text-[#002B49] flex items-center gap-2">
-                  <GitBranch className="w-5 h-5 text-amber-600" /> Push to GitHub
+                  <GitBranch className="w-5 h-5 text-blue-600" /> Push to GitHub
                 </h3>
                 <p className="text-base text-slate-600 leading-relaxed font-medium">
                   Save your code in a GitHub repository (or drag-and-drop your project folder directly).
                 </p>
               </div>
 
-              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-7 border border-amber-400/40 space-y-4 relative shadow-xl">
-                <div className="w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-black text-xl">
+              <div className="bg-[#002B49] text-slate-50 rounded-2xl p-7 border border-slate-800 space-y-4 relative shadow-xl">
+                <div className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center font-black text-xl">
                   3
                 </div>
-                <h3 className="text-xl font-extrabold text-amber-300 flex items-center gap-2">
+                <h3 className="text-xl font-extrabold text-blue-200 flex items-center gap-2">
                   <CloudUpload className="w-5 h-5" /> Live on Netlify/Vercel
                 </h3>
                 <p className="text-base text-slate-100 leading-relaxed font-medium">
@@ -813,12 +815,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 11: CONCLUSION */}
         {currentSlide === 11 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-[#002B49] text-slate-50 rounded-3xl border border-amber-400/40 shadow-2xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-[#002B49] text-slate-50 rounded-3xl border border-slate-800 shadow-2xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-amber-400/15 border border-amber-400/30 text-amber-300 text-sm font-extrabold tracking-widest uppercase">
-                <Rocket className="w-4 h-4 text-amber-400" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-600/30 border border-blue-400/30 text-blue-200 text-sm font-extrabold tracking-widest uppercase">
+                <Rocket className="w-4 h-4 text-blue-300" />
                 BUILDING THE WORLD YOU ENVISION
               </div>
 
@@ -827,18 +829,18 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </blockquote>
             </div>
 
-            <div className="my-8 p-8 rounded-2xl bg-slate-900/90 border border-amber-400/40 max-w-4xl space-y-3 shadow-xl">
-              <h4 className="text-lg md:text-xl font-bold text-amber-300">Takeaway for Educators</h4>
+            <div className="my-8 p-8 rounded-2xl bg-slate-900/90 border border-slate-700 max-w-4xl space-y-3 shadow-xl">
+              <h4 className="text-lg md:text-xl font-bold text-blue-200">Takeaway for Educators</h4>
               <p className="text-base md:text-lg text-slate-100 leading-relaxed font-medium">
                 Shift from being an EdTech Consumer to an Educational Architect in Google AI Studio today.
               </p>
             </div>
 
-            <div className="flex items-center justify-between pt-6 border-t border-amber-400/30 text-sm text-slate-300">
+            <div className="flex items-center justify-between pt-6 border-t border-blue-900 text-sm text-slate-300">
               <span>Gulliver Prep GSET Workshop</span>
               <button
                 onClick={nextSlide}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold text-base transition shadow-xl"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-base transition shadow-xl"
               >
                 Proceed to Feedback Form <ChevronRight className="w-5 h-5" />
               </button>
@@ -846,16 +848,16 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 12: FEEDBACK FORM & ATTENDANCE QR CODE (UNIFORM HEIGHT MATCHING ALL OTHER SLIDES) */}
+        {/* SLIDE 12: FEEDBACK FORM & ATTENDANCE QR CODE */}
         {currentSlide === 12 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-amber-400/60 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border-2 border-[#002B49]/30 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-slate-200">
               <div>
-                <span className="text-sm font-extrabold text-amber-600 uppercase tracking-widest">WORKSHOP ATTENDANCE & FEEDBACK</span>
-                <h2 className="text-3xl md:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">FEEDBACK FORM</h2>
+                <span className="text-xs font-extrabold text-[#002B49] uppercase tracking-widest bg-[#002B49]/5 border border-[#002B49]/15 px-3 py-1 rounded-full">WORKSHOP ATTENDANCE & FEEDBACK</span>
+                <h2 className="text-3xl md:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-2">FEEDBACK FORM</h2>
               </div>
-              <div className="p-4 rounded-2xl bg-[#002B49] text-amber-300 font-black flex items-center gap-3 shadow-md">
-                <QrCode className="w-8 h-8 text-amber-400" />
+              <div className="p-4 rounded-2xl bg-[#002B49] text-white font-black flex items-center gap-3 shadow-md">
+                <QrCode className="w-8 h-8 text-blue-300" />
                 <span className="text-sm tracking-wider uppercase font-extrabold hidden sm:inline">GSET</span>
               </div>
             </div>
@@ -864,8 +866,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               
               {/* Left Column: QR Code Display Card */}
               <div className="md:col-span-5 flex flex-col items-center justify-center">
-                <div className="bg-slate-50 p-5 md:p-6 rounded-2xl shadow-lg border-2 border-amber-400 text-center space-y-3 relative group">
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider shadow">
+                <div className="bg-slate-50 p-5 md:p-6 rounded-2xl shadow-lg border-2 border-[#002B49] text-center space-y-3 relative group">
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#002B49] text-white text-xs font-black px-4 py-1 rounded-full uppercase tracking-wider shadow">
                     Scan With Phone Camera
                   </div>
                   <img
@@ -879,7 +881,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
               {/* Right Column: Attendance Instructions & Badge */}
               <div className="md:col-span-7 space-y-6">
-                <div className="bg-[#002B49] text-slate-50 rounded-2xl p-6 md:p-8 border border-amber-400/30 space-y-3 shadow-lg">
+                <div className="bg-[#002B49] text-slate-50 rounded-2xl p-6 md:p-8 border border-slate-800 space-y-3 shadow-lg">
                   <h3 className="text-xl md:text-2xl font-medium text-slate-100 font-['Playfair_Display'] italic leading-relaxed">
                     "Please fill out this form to confirm your attendance and leave valuable feedback for your workshop facilitator."
                   </h3>
@@ -887,7 +889,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
                 <div className="flex flex-wrap items-center justify-between gap-4 p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
                   <div className="flex items-center gap-3">
-                    <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-600 border border-emerald-500/20">
+                    <div className="p-3 rounded-xl bg-[#002B49]/10 text-[#002B49] border border-[#002B49]/20">
                       <ShieldCheck className="w-7 h-7" />
                     </div>
                     <div>
@@ -897,7 +899,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   </div>
 
                   <div className="text-right">
-                    <span className="text-2xl md:text-3xl font-black text-amber-600 font-['Montserrat'] tracking-tight block">
+                    <span className="text-2xl md:text-3xl font-black text-[#002B49] font-['Montserrat'] tracking-tight block">
                       THANK YOU!
                     </span>
                   </div>
@@ -913,7 +915,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
               <button
                 onClick={() => setCurrentSlide(0)}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B49] hover:bg-[#001F3F] text-amber-300 font-bold transition text-sm shadow"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B49] hover:bg-[#001F3F] text-white font-bold transition text-sm shadow"
               >
                 Back to Start
               </button>
@@ -923,7 +925,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
       </main>
 
-      {/* Bottom Floating Control Bar (Light Mode) */}
+      {/* Bottom Floating Control Bar */}
       <footer className="relative z-30 flex items-center justify-between px-6 py-4 bg-white/95 backdrop-blur-md border-t border-slate-200 shadow-sm">
         <button
           onClick={prevSlide}
@@ -955,7 +957,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
         <button
           onClick={nextSlide}
           disabled={currentSlide === totalSlides - 1}
-          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B49] hover:bg-[#001F3F] disabled:opacity-30 disabled:pointer-events-none text-amber-300 text-sm font-extrabold transition shadow-md"
+          className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#002B49] hover:bg-[#001F3F] disabled:opacity-30 disabled:pointer-events-none text-white text-sm font-extrabold transition shadow-md"
         >
           Next <ChevronRight className="w-5 h-5" />
         </button>
