@@ -199,47 +199,64 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
         
         {/* SLIDE 0: TITLE SLIDE */}
         {currentSlide === 0 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#002B49]/5 rounded-full blur-3xl pointer-events-none"></div>
             
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#002B49]/10 border border-[#002B49]/20 text-[#002B49] text-sm font-extrabold tracking-widest uppercase">
-                <Sparkles className="w-4 h-4 text-[#002B49]" />
-                Gulliver Prep GSET Workshop Presentation
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-8 space-y-4">
+                <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#002B49]/10 border border-[#002B49]/20 text-[#002B49] text-xs md:text-sm font-extrabold tracking-widest uppercase">
+                  <Sparkles className="w-4 h-4 text-[#002B49]" />
+                  Gulliver Prep GSET Workshop Presentation
+                </div>
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-[#002B49] tracking-tight leading-tight font-['Montserrat']">
+                  From Consumer to <span className="text-blue-700 underline decoration-[#002B49] decoration-wavy decoration-2">Creator</span>
+                </h1>
+                <p className="text-xl md:text-2xl font-medium text-slate-700 font-['Playfair_Display'] italic">
+                  A Teacher's Guide to Google AI Studio
+                </p>
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-[#002B49] tracking-tight leading-tight font-['Montserrat'] max-w-5xl">
-                From Consumer to <span className="text-blue-700 underline decoration-[#002B49] decoration-wavy decoration-2">Creator</span>
-              </h1>
-              <p className="text-2xl md:text-3xl font-medium text-slate-700 font-['Playfair_Display'] italic max-w-3xl">
-                A Teacher's Guide to Google AI Studio
-              </p>
+
+              {/* QR Code Scan to Follow Card */}
+              <div className="lg:col-span-4 flex justify-center lg:justify-end">
+                <div className="bg-slate-50 p-4 rounded-2xl border-2 border-[#002B49] text-center space-y-2 shadow-md relative group max-w-[220px]">
+                  <div className="bg-[#002B49] text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider shadow mx-auto w-fit">
+                    Scan to Follow Along
+                  </div>
+                  <img
+                    src="/presentation-qr.png"
+                    alt="Scan to Follow Along QR Code"
+                    className="w-36 h-36 md:w-40 md:h-40 object-contain mx-auto transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <p className="text-[11px] text-slate-700 font-bold font-mono">Open deck on your device</p>
+                </div>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-6">
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
                 <div className="w-10 h-10 rounded-xl bg-[#002B49]/10 text-[#002B49] flex items-center justify-center">
                   <GraduationCap className="w-6 h-6" />
                 </div>
                 <h4 className="text-base md:text-lg font-bold text-[#002B49]">Pedagogical Shift</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">Moving teachers from software consumers to AI architects.</p>
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed">Moving teachers from software consumers to AI architects.</p>
               </div>
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
                 <div className="w-10 h-10 rounded-xl bg-[#002B49]/10 text-[#002B49] flex items-center justify-center">
                   <Code className="w-6 h-6" />
                 </div>
                 <h4 className="text-base md:text-lg font-bold text-[#002B49]">Zero Code Barriers</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">Natural language prompting as the new building language.</p>
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed">Natural language prompting as the new building language.</p>
               </div>
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
+              <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-2 shadow-sm">
                 <div className="w-10 h-10 rounded-xl bg-[#002B49]/10 text-[#002B49] flex items-center justify-center">
                   <Wand2 className="w-6 h-6" />
                 </div>
                 <h4 className="text-base md:text-lg font-bold text-[#002B49]">Experiential Tech</h4>
-                <p className="text-sm text-slate-600 leading-relaxed">Creating awe, wonder, and memorable learning tools.</p>
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed">Creating awe, wonder, and memorable learning tools.</p>
               </div>
             </div>
 
-            <div className="flex items-center justify-between pt-6 border-t border-slate-200 text-sm text-slate-500">
+            <div className="flex items-center justify-between pt-4 border-t border-slate-200 text-sm text-slate-500">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-[#002B49]" />
                 <span className="font-semibold text-slate-700">Gulliver Prep Educational Technology (GSET)</span>
