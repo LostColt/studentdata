@@ -815,32 +815,35 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
         {/* SLIDE 11: CONCLUSION */}
         {currentSlide === 11 && (
-          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-[#002B49] text-slate-50 rounded-3xl border border-slate-800 shadow-2xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-white rounded-3xl border border-slate-200/90 shadow-xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#002B49]/5 rounded-full blur-3xl pointer-events-none"></div>
 
             <div className="space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-blue-600/30 border border-blue-400/30 text-blue-200 text-sm font-extrabold tracking-widest uppercase">
-                <Rocket className="w-4 h-4 text-blue-300" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-[#002B49]/10 border border-[#002B49]/20 text-[#002B49] text-sm font-extrabold tracking-widest uppercase">
+                <Rocket className="w-4 h-4 text-[#002B49]" />
                 BUILDING THE WORLD YOU ENVISION
               </div>
 
-              <blockquote className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-slate-50 font-['Playfair_Display'] italic leading-relaxed max-w-5xl">
-                "AI is not simply an automation of my life, but getting help to build the one that I envisioned."
-              </blockquote>
+              <div className="relative">
+                <Quote className="w-20 h-20 text-[#002B49]/10 absolute -top-8 -left-6 pointer-events-none" />
+                <blockquote className="text-3xl md:text-5xl lg:text-6xl font-black text-[#002B49] font-['Playfair_Display'] italic leading-relaxed max-w-5xl relative z-10">
+                  "AI is not simply an automation of my life, but getting help to build the one that I envisioned."
+                </blockquote>
+              </div>
             </div>
 
-            <div className="my-8 p-8 rounded-2xl bg-slate-900/90 border border-slate-700 max-w-4xl space-y-3 shadow-xl">
-              <h4 className="text-lg md:text-xl font-bold text-blue-200">Takeaway for Educators</h4>
-              <p className="text-base md:text-lg text-slate-100 leading-relaxed font-medium">
+            <div className="my-8 p-6 md:p-8 rounded-r-2xl bg-slate-50 border-l-4 border-[#002B49] max-w-4xl space-y-2 shadow-sm">
+              <h4 className="text-lg md:text-xl font-bold text-[#002B49]">Takeaway for Educators</h4>
+              <p className="text-base md:text-lg text-slate-700 leading-relaxed font-medium">
                 Shift from being an EdTech Consumer to an Educational Architect in Google AI Studio today.
               </p>
             </div>
 
-            <div className="flex items-center justify-between pt-6 border-t border-blue-900 text-sm text-slate-300">
+            <div className="flex items-center justify-between pt-6 border-t border-slate-200 text-sm text-slate-500">
               <span>Gulliver Prep GSET Workshop</span>
               <button
                 onClick={nextSlide}
-                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-extrabold text-base transition shadow-xl"
+                className="inline-flex items-center gap-2.5 px-6 py-3 rounded-xl bg-[#002B49] hover:bg-[#001F3F] text-white font-extrabold text-base transition shadow-lg"
               >
                 Proceed to Feedback Form <ChevronRight className="w-5 h-5" />
               </button>
