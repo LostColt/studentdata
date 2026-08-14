@@ -41,7 +41,9 @@ import {
   CloudUpload,
   Share2,
   Workflow,
-  Sparkle
+  Palette,
+  Sun,
+  Moon
 } from 'lucide-react';
 
 interface PresentationProps {
@@ -54,7 +56,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [copiedPrompt, setCopiedPrompt] = useState<string | null>(null);
 
-  const totalSlides = 13;
+  const totalSlides = 15;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev < totalSlides - 1 ? prev + 1 : prev));
@@ -114,7 +116,9 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
     "9. Teacher Activity 2: Clone OR Create Your App",
     "10. Deployment Blueprint: GitHub & Netlify/Vercel",
     "11. Conclusion: Building What You Envision",
-    "12. Feedback Form & Attendance QR Code"
+    "12. Feedback Form & Attendance QR Code",
+    "13. PREVIEW: Theme Option 3 (Executive Slate Blue)",
+    "14. PREVIEW: Theme Option 4 (Modern Light Mode)"
   ];
 
   return (
@@ -304,7 +308,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 2 of 13</span>
+              <span className="font-mono">Slide 2 of {totalSlides}</span>
             </div>
           </div>
         )}
@@ -356,7 +360,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 3 of 13</span>
+              <span className="font-mono">Slide 3 of {totalSlides}</span>
             </div>
           </div>
         )}
@@ -399,7 +403,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 4 of 13</span>
+              <span className="font-mono">Slide 4 of {totalSlides}</span>
             </div>
           </div>
         )}
@@ -446,7 +450,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 5 of 13</span>
+              <span className="font-mono">Slide 5 of {totalSlides}</span>
             </div>
           </div>
         )}
@@ -517,7 +521,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 6 of 13</span>
+              <span className="font-mono">Slide 6 of {totalSlides}</span>
             </div>
           </div>
         )}
@@ -554,7 +558,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 7 of 13</span>
+              <span className="font-mono">Slide 7 of {totalSlides}</span>
             </div>
           </div>
         )}
@@ -601,7 +605,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 8 of 13</span>
+              <span className="font-mono">Slide 8 of {totalSlides}</span>
             </div>
           </div>
         )}
@@ -648,12 +652,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 9 of 13</span>
+              <span className="font-mono">Slide 9 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 9: TEACHER ACTIVITY 2 (SCAFFOLDING FRAMEWORK: CLONE OR CREATE + 3 STAGES) */}
+        {/* SLIDE 9: TEACHER ACTIVITY 2 */}
         {currentSlide === 9 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-4 border-b border-slate-800">
@@ -666,7 +670,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            {/* 2 Track Choice Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-2">
               <div className="bg-slate-950/80 rounded-2xl p-6 border border-slate-800 space-y-2">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-300 text-xs font-bold uppercase">
@@ -689,7 +692,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            {/* 3-Stage Thinking Framework Bar */}
             <div className="bg-slate-950/60 rounded-xl p-4 border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-4 my-2">
               <div className="flex items-start gap-3">
                 <div className="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shrink-0">1</div>
@@ -714,7 +716,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            {/* Prominent Example Prompt Card */}
             <div className="bg-slate-950/90 rounded-2xl border-2 border-amber-400 p-5 md:p-6 shadow-xl space-y-3">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -740,12 +741,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-3 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 10 of 13</span>
+              <span className="font-mono">Slide 10 of {totalSlides}</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 10: NEW DEPLOYMENT BLUEPRINT (GITHUB & NETLIFY/VERCEL) */}
+        {/* SLIDE 10: DEPLOYMENT BLUEPRINT */}
         {currentSlide === 10 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-800">
@@ -759,8 +760,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto py-6">
-              
-              {/* Step 1 */}
               <div className="bg-slate-950/70 rounded-2xl p-7 border border-slate-800 space-y-4 relative">
                 <div className="w-12 h-12 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-xl">
                   1
@@ -773,7 +772,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </p>
               </div>
 
-              {/* Step 2 */}
               <div className="bg-slate-950/70 rounded-2xl p-7 border border-slate-800 space-y-4 relative">
                 <div className="w-12 h-12 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-xl">
                   2
@@ -786,7 +784,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </p>
               </div>
 
-              {/* Step 3 */}
               <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-7 border border-amber-400/60 space-y-4 relative shadow-xl">
                 <div className="w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-xl">
                   3
@@ -798,10 +795,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   Connect your GitHub repo to Netlify or Vercel for a free, permanent URL (e.g. <code>mytool.netlify.app</code>) to share with students!
                 </p>
               </div>
-
             </div>
 
-            {/* Pro Tip Card */}
             <div className="p-6 rounded-2xl bg-slate-950/80 border border-amber-400/30 flex items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <div className="p-3 rounded-xl bg-amber-400/10 text-amber-400">
@@ -816,7 +811,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 11 of 13</span>
+              <span className="font-mono">Slide 11 of {totalSlides}</span>
             </div>
           </div>
         )}
@@ -871,8 +866,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6 my-auto py-3 items-center">
-              
-              {/* Left Column: QR Code Display Card */}
               <div className="md:col-span-5 flex flex-col items-center justify-center">
                 <div className="bg-white p-4 md:p-5 rounded-2xl shadow-xl border-3 border-amber-400 text-center space-y-2 relative group">
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-amber-400 text-slate-950 text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
@@ -887,7 +880,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 </div>
               </div>
 
-              {/* Right Column: Attendance Instructions & Badge */}
               <div className="md:col-span-7 space-y-4">
                 <div className="bg-slate-900/90 rounded-xl p-5 border border-slate-800 space-y-2 shadow-md">
                   <h3 className="text-lg md:text-xl font-medium text-slate-100 font-['Playfair_Display'] italic leading-relaxed">
@@ -913,7 +905,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                   </div>
                 </div>
               </div>
-
             </div>
 
             <div className="flex items-center justify-between pt-3 border-t border-slate-800 text-xs text-slate-400">
@@ -922,11 +913,117 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
                 <span>Thank you for participating in Gulliver Prep GSET</span>
               </div>
               <button
-                onClick={() => setCurrentSlide(0)}
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold transition border border-slate-700 text-xs"
+                onClick={() => setCurrentSlide(13)}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold transition text-xs shadow-md"
               >
-                Back to Start
+                View Theme Previews <ArrowRight className="w-4 h-4" />
               </button>
+            </div>
+          </div>
+        )}
+
+        {/* SLIDE 13: PREVIEW OPTION 3 (EXECUTIVE SLATE BLUE & CHAMPAGNE) */}
+        {currentSlide === 13 && (
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-[#1E293B] via-[#0F172A] to-[#334155] rounded-3xl border-2 border-amber-400/50 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-700/80">
+              <div>
+                <span className="text-sm font-extrabold text-amber-400 uppercase tracking-widest flex items-center gap-2">
+                  <Palette className="w-4 h-4" /> PREVIEW OPTION 3: EXECUTIVE SLATE BLUE & CHAMPAGNE
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Softer Medium Palette</h2>
+              </div>
+              <div className="p-4 rounded-2xl bg-amber-400/10 text-amber-400 border border-amber-400/30">
+                <Moon className="w-8 h-8" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
+              <div className="bg-[#0F172A]/90 rounded-2xl p-8 border border-slate-700 space-y-4 shadow-xl">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-100">Why Choose Executive Slate Blue?</h3>
+                <ul className="space-y-4 text-base md:text-lg text-slate-200 leading-relaxed font-medium">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-400 font-bold text-xl">•</span>
+                    <span><strong className="text-amber-300">Reduced Room Strain:</strong> Softer slate blue background absorbs room glare while keeping contrast comfortable.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-400 font-bold text-xl">•</span>
+                    <span><strong className="text-amber-300">Gulliver Prep Alignment:</strong> Maintains traditional Gulliver Navy tones blended with warm slate and champagne accents.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] rounded-2xl p-8 border border-amber-400/60 flex flex-col justify-between shadow-2xl">
+                <div className="space-y-4">
+                  <span className="text-xs font-bold text-amber-400 uppercase tracking-widest">SAMPLE CARD DISPLAY</span>
+                  <blockquote className="text-xl md:text-2xl font-medium text-slate-100 italic font-['Playfair_Display'] leading-relaxed">
+                    "This palette creates an inviting, academic atmosphere on projector screens."
+                  </blockquote>
+                </div>
+                <div className="pt-6 border-t border-slate-700 flex items-center justify-between">
+                  <span className="text-xs font-bold text-amber-300 uppercase">Medium Contrast Slate Mode</span>
+                  <button onClick={() => setCurrentSlide(14)} className="text-xs font-extrabold text-slate-950 bg-amber-400 hover:bg-amber-300 px-4 py-2 rounded-lg transition flex items-center gap-1.5">
+                    Compare Light Mode <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-sm text-slate-400 flex justify-between pt-4 border-t border-slate-700/80">
+              <span>Theme Option 3 Preview</span>
+              <span className="font-mono">Slide 14 of {totalSlides}</span>
+            </div>
+          </div>
+        )}
+
+        {/* SLIDE 14: PREVIEW OPTION 4 (MODERN LIGHT MODE - OFF-WHITE & NAVY) */}
+        {currentSlide === 14 && (
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-[#F8FAFC] via-slate-100 to-[#F1F5F9] text-slate-900 rounded-3xl border-2 border-slate-300 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-300">
+              <div>
+                <span className="text-sm font-extrabold text-[#002B49] uppercase tracking-widest flex items-center gap-2">
+                  <Sun className="w-4 h-4 text-amber-500" /> PREVIEW OPTION 4: MODERN LIGHT MODE (OFF-WHITE & NAVY)
+                </span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#002B49] font-['Montserrat'] mt-1">Crisp High-Visibility Mode</h2>
+              </div>
+              <div className="p-4 rounded-2xl bg-amber-400/20 text-[#002B49] border border-amber-400/40">
+                <Sun className="w-8 h-8 text-amber-600" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-auto py-6">
+              <div className="bg-white rounded-2xl p-8 border border-slate-200 space-y-4 shadow-lg">
+                <h3 className="text-xl md:text-2xl font-bold text-[#002B49]">Why Choose Modern Light Mode?</h3>
+                <ul className="space-y-4 text-base md:text-lg text-slate-700 leading-relaxed font-medium">
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-600 font-bold text-xl">•</span>
+                    <span><strong className="text-[#002B49]">100% Bright Room Immunity:</strong> Extremely easy to read even under bright overhead lights or unshaded windows.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="text-amber-600 font-bold text-xl">•</span>
+                    <span><strong className="text-[#002B49]">Crisp Gulliver Navy:</strong> Uses deep Gulliver Navy text (`#002B49`) on crisp white cards for maximum legibility.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 border-2 border-amber-400 flex flex-col justify-between shadow-xl">
+                <div className="space-y-4">
+                  <span className="text-xs font-extrabold text-amber-600 uppercase tracking-widest">SAMPLE CARD DISPLAY</span>
+                  <blockquote className="text-xl md:text-2xl font-medium text-slate-800 italic font-['Playfair_Display'] leading-relaxed">
+                    "Clean, classic presentation style with high contrast text and vibrant gold highlights."
+                  </blockquote>
+                </div>
+                <div className="pt-6 border-t border-slate-200 flex items-center justify-between">
+                  <span className="text-xs font-bold text-slate-600 uppercase">Light Classroom Mode</span>
+                  <button onClick={() => setCurrentSlide(0)} className="text-xs font-extrabold text-white bg-[#002B49] hover:bg-[#001F3F] px-4 py-2 rounded-lg transition flex items-center gap-1.5 shadow">
+                    Back to Start <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-300">
+              <span>Theme Option 4 Preview</span>
+              <span className="font-mono">Slide 15 of {totalSlides}</span>
             </div>
           </div>
         )}
