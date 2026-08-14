@@ -37,7 +37,10 @@ import {
   ShieldCheck,
   QrCode,
   Heart,
-  MessageSquare,
+  GitBranch,
+  CloudUpload,
+  Share2,
+  Workflow,
   Sparkle
 } from 'lucide-react';
 
@@ -51,7 +54,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [copiedPrompt, setCopiedPrompt] = useState<string | null>(null);
 
-  const totalSlides = 12;
+  const totalSlides = 13;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev < totalSlides - 1 ? prev + 1 : prev));
@@ -108,9 +111,10 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
     "6. Visual Learning: Awe & Wonder",
     "7. Experiment 2: Black Hole Simulation",
     "8. Becoming the Builder: Padlet Clone",
-    "9. Teacher Activity 2: Clone an App",
-    "10. Conclusion: Building What You Envision",
-    "11. Feedback Form & Attendance QR Code"
+    "9. Teacher Activity 2: Clone OR Create Your App",
+    "10. Deployment Blueprint: GitHub & Netlify/Vercel",
+    "11. Conclusion: Building What You Envision",
+    "12. Feedback Form & Attendance QR Code"
   ];
 
   return (
@@ -300,7 +304,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 2 of 12</span>
+              <span className="font-mono">Slide 2 of 13</span>
             </div>
           </div>
         )}
@@ -352,7 +356,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 3 of 12</span>
+              <span className="font-mono">Slide 3 of 13</span>
             </div>
           </div>
         )}
@@ -395,7 +399,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 4 of 12</span>
+              <span className="font-mono">Slide 4 of 13</span>
             </div>
           </div>
         )}
@@ -442,12 +446,12 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 5 of 12</span>
+              <span className="font-mono">Slide 5 of 13</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 5: TEACHER ACTIVITY 1 (WITH PROMINENT EXAMPLE PROMPT) */}
+        {/* SLIDE 5: TEACHER ACTIVITY 1 */}
         {currentSlide === 5 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
             <div className="flex items-center justify-between pb-6 border-b border-slate-800">
@@ -460,7 +464,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            {/* 4 Steps Header Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
               <div className="bg-slate-950/70 rounded-xl p-4 border border-slate-800 space-y-1">
                 <span className="text-xl font-black text-amber-400 font-['Montserrat']">01</span>
@@ -487,7 +490,6 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
               </div>
             </div>
 
-            {/* Large Prominent Example Prompt Card */}
             <div className="bg-slate-950/90 rounded-2xl border-2 border-amber-400 p-6 md:p-8 my-2 shadow-2xl space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
@@ -515,7 +517,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 6 of 12</span>
+              <span className="font-mono">Slide 6 of 13</span>
             </div>
           </div>
         )}
@@ -552,7 +554,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 7 of 12</span>
+              <span className="font-mono">Slide 7 of 13</span>
             </div>
           </div>
         )}
@@ -599,7 +601,7 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 8 of 12</span>
+              <span className="font-mono">Slide 8 of 13</span>
             </div>
           </div>
         )}
@@ -646,86 +648,181 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 9 of 12</span>
+              <span className="font-mono">Slide 9 of 13</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 9: TEACHER ACTIVITY 2 (WITH PROMINENT EXAMPLE PROMPT) */}
+        {/* SLIDE 9: TEACHER ACTIVITY 2 (SCAFFOLDING FRAMEWORK: CLONE OR CREATE + 3 STAGES) */}
         {currentSlide === 9 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+            <div className="flex items-center justify-between pb-4 border-b border-slate-800">
               <div>
-                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">HANDS-ON BUILDER SESSION</span>
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Activity 2: Clone an App You Use</h2>
+                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">HANDS-ON BUILDER WORKSHOP</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">Activity 2: Clone OR Create Your App</h2>
               </div>
               <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
                 <AppWindow className="w-8 h-8" />
               </div>
             </div>
 
-            {/* 4 Steps Header Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
-              <div className="bg-slate-950/70 rounded-xl p-4 border border-slate-800 space-y-1">
-                <span className="text-xl font-black text-amber-400 font-['Montserrat']">01</span>
-                <h4 className="text-sm font-bold text-slate-100">Choose App</h4>
-                <p className="text-xs text-slate-400">Select an app you use often.</p>
+            {/* 2 Track Choice Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-2">
+              <div className="bg-slate-950/80 rounded-2xl p-6 border border-slate-800 space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400/10 text-amber-300 text-xs font-bold uppercase">
+                  Track A: Clone an Existing App
+                </div>
+                <h4 className="text-base font-bold text-slate-100">Pick a Tool You Use Daily</h4>
+                <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+                  Padlet, Quizlet flashcards, classroom timer, spinner wheel, exit ticket form.
+                </p>
               </div>
 
-              <div className="bg-slate-950/70 rounded-xl p-4 border border-amber-400/40 space-y-1">
-                <span className="text-xl font-black text-amber-400 font-['Montserrat']">02</span>
-                <h4 className="text-sm font-bold text-slate-100">AI Prompt</h4>
-                <p className="text-xs text-slate-400">Ask AI Studio to build a clone.</p>
-              </div>
-
-              <div className="bg-slate-950/70 rounded-xl p-4 border border-slate-800 space-y-1">
-                <span className="text-xl font-black text-amber-400 font-['Montserrat']">03</span>
-                <h4 className="text-sm font-bold text-slate-100">Refine</h4>
-                <p className="text-xs text-slate-400">Tweak functionality by prompting AI.</p>
-              </div>
-
-              <div className="bg-slate-950/70 rounded-xl p-4 border border-slate-800 space-y-1">
-                <span className="text-xl font-black text-amber-400 font-['Montserrat']">04</span>
-                <h4 className="text-sm font-bold text-slate-100">Peer Review</h4>
-                <p className="text-xs text-slate-400">Showcase creation with peers.</p>
+              <div className="bg-slate-950/80 rounded-2xl p-6 border border-amber-400/30 space-y-2">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-400 text-slate-950 text-xs font-extrabold uppercase">
+                  Track B: Create Your Custom Tool
+                </div>
+                <h4 className="text-base font-bold text-slate-100">Use Gemini to Refine Your Prompt</h4>
+                <p className="text-xs md:text-sm text-slate-300 leading-relaxed">
+                  Tell Gemini: <em>"Help me write a detailed prompt for Google AI Studio to build an app for..."</em>
+                </p>
               </div>
             </div>
 
-            {/* Large Prominent Example Prompt Card */}
-            <div className="bg-slate-950/90 rounded-2xl border-2 border-amber-400 p-6 md:p-8 my-2 shadow-2xl space-y-4">
+            {/* 3-Stage Thinking Framework Bar */}
+            <div className="bg-slate-950/60 rounded-xl p-4 border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-4 my-2">
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shrink-0">1</div>
+                <div>
+                  <h5 className="text-xs font-bold text-slate-200">The Shape (Wireframe)</h5>
+                  <p className="text-[11px] text-slate-400">What does it look like on screen?</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shrink-0">2</div>
+                <div>
+                  <h5 className="text-xs font-bold text-slate-200">The Logic (Action)</h5>
+                  <p className="text-[11px] text-slate-400">What happens when a student clicks?</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-lg bg-amber-400 text-slate-950 font-black flex items-center justify-center text-xs shrink-0">3</div>
+                <div>
+                  <h5 className="text-xs font-bold text-slate-200">The Content (Lesson)</h5>
+                  <p className="text-[11px] text-slate-400">Insert your subject matter!</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Prominent Example Prompt Card */}
+            <div className="bg-slate-950/90 rounded-2xl border-2 border-amber-400 p-5 md:p-6 shadow-xl space-y-3">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className="p-2 rounded-lg bg-amber-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider flex items-center gap-1.5">
-                    <Terminal className="w-4 h-4" /> Example Prompt for AI Studio
-                  </div>
-                  <span className="text-xs text-slate-400 hidden sm:inline">Use this prompt structure to build your custom app clone</span>
+                <div className="flex items-center gap-2">
+                  <Terminal className="w-4 h-4 text-amber-400" />
+                  <span className="text-xs font-bold text-slate-200 uppercase tracking-wider">Example Prompt for AI Studio</span>
                 </div>
                 <button
                   onClick={() => handleCopyPrompt(
-                    "Build a single-file functional web application clone of Padlet in HTML, CSS, and JavaScript. Allow users to post notes to a collaborative grid board with custom note colors, text editing, and clean responsive layout.",
+                    "Build a single-file functional web application clone of Padlet in HTML, CSS, and JavaScript. Allow users to post notes to a digital bulletin board with custom colors, text editing, and clean responsive layout.",
                     "activity2"
                   )}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 border border-amber-400/40 text-xs font-bold transition"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-400/20 hover:bg-amber-400/30 text-amber-300 border border-amber-400/40 text-xs font-bold transition"
                 >
-                  <Copy className="w-4 h-4" />
-                  {copiedPrompt === "activity2" ? "Prompt Copied!" : "Copy Example Prompt"}
+                  <Copy className="w-3.5 h-3.5" />
+                  {copiedPrompt === "activity2" ? "Copied!" : "Copy Prompt"}
                 </button>
               </div>
 
-              <div className="p-5 rounded-xl bg-slate-900 border border-slate-800 text-amber-300 font-['Fira_Code'] font-normal text-base md:text-lg leading-relaxed select-text">
+              <div className="p-4 rounded-xl bg-slate-900 border border-slate-800 text-amber-300 font-['Fira_Code'] text-sm md:text-base leading-relaxed select-text">
                 "Build a single-file functional web application clone of Padlet in HTML, CSS, and JavaScript. Allow users to post notes to a digital bulletin board with custom colors, text editing, and clean responsive layout."
+              </div>
+            </div>
+
+            <div className="text-sm text-slate-500 flex justify-between pt-3 border-t border-slate-800">
+              <span>Gulliver Prep GSET Workshop</span>
+              <span className="font-mono">Slide 10 of 13</span>
+            </div>
+          </div>
+        )}
+
+        {/* SLIDE 10: NEW DEPLOYMENT BLUEPRINT (GITHUB & NETLIFY/VERCEL) */}
+        {currentSlide === 10 && (
+          <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-slate-900 rounded-3xl border border-slate-800 p-8 md:p-12 flex flex-col justify-between">
+            <div className="flex items-center justify-between pb-6 border-b border-slate-800">
+              <div>
+                <span className="text-sm font-bold text-amber-400 uppercase tracking-widest">DEPLOYMENT BLUEPRINT</span>
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-slate-50 font-['Montserrat'] mt-1">From Prototype to Live Link</h2>
+              </div>
+              <div className="p-4 rounded-2xl bg-slate-800 text-amber-400 border border-slate-700">
+                <Workflow className="w-8 h-8" />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-auto py-6">
+              
+              {/* Step 1 */}
+              <div className="bg-slate-950/70 rounded-2xl p-7 border border-slate-800 space-y-4 relative">
+                <div className="w-12 h-12 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-xl">
+                  1
+                </div>
+                <h3 className="text-xl font-extrabold text-slate-100 flex items-center gap-2">
+                  <Code className="w-5 h-5 text-amber-400" /> Export Code
+                </h3>
+                <p className="text-base text-slate-300 leading-relaxed font-medium">
+                  Copy your single-file HTML code or download the project files directly from Google AI Studio.
+                </p>
+              </div>
+
+              {/* Step 2 */}
+              <div className="bg-slate-950/70 rounded-2xl p-7 border border-slate-800 space-y-4 relative">
+                <div className="w-12 h-12 rounded-xl bg-amber-400/10 text-amber-400 flex items-center justify-center font-bold text-xl">
+                  2
+                </div>
+                <h3 className="text-xl font-extrabold text-slate-100 flex items-center gap-2">
+                  <GitBranch className="w-5 h-5 text-amber-400" /> Push to GitHub
+                </h3>
+                <p className="text-base text-slate-300 leading-relaxed font-medium">
+                  Save your code in a GitHub repository (or drag-and-drop your project folder directly).
+                </p>
+              </div>
+
+              {/* Step 3 */}
+              <div className="bg-gradient-to-br from-[#001F3F] to-slate-950 rounded-2xl p-7 border border-amber-400/60 space-y-4 relative shadow-xl">
+                <div className="w-12 h-12 rounded-xl bg-amber-400 text-slate-950 flex items-center justify-center font-bold text-xl">
+                  3
+                </div>
+                <h3 className="text-xl font-extrabold text-amber-300 flex items-center gap-2">
+                  <CloudUpload className="w-5 h-5" /> Live on Netlify/Vercel
+                </h3>
+                <p className="text-base text-slate-100 leading-relaxed font-medium">
+                  Connect your GitHub repo to Netlify or Vercel for a free, permanent URL (e.g. <code>mytool.netlify.app</code>) to share with students!
+                </p>
+              </div>
+
+            </div>
+
+            {/* Pro Tip Card */}
+            <div className="p-6 rounded-2xl bg-slate-950/80 border border-amber-400/30 flex items-center justify-between gap-4">
+              <div className="flex items-center gap-3">
+                <div className="p-3 rounded-xl bg-amber-400/10 text-amber-400">
+                  <Share2 className="w-6 h-6" />
+                </div>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-100">Why Publish a Live URL?</h4>
+                  <p className="text-xs text-slate-400">Students can open your app on iPads, Chromebooks, or phones without logging in.</p>
+                </div>
               </div>
             </div>
 
             <div className="text-sm text-slate-500 flex justify-between pt-4 border-t border-slate-800">
               <span>Gulliver Prep GSET Workshop</span>
-              <span className="font-mono">Slide 10 of 12</span>
+              <span className="font-mono">Slide 11 of 13</span>
             </div>
           </div>
         )}
 
-        {/* SLIDE 10: CONCLUSION */}
-        {currentSlide === 10 && (
+        {/* SLIDE 11: CONCLUSION */}
+        {currentSlide === 11 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-slate-900 via-[#001F3F] to-slate-950 rounded-3xl border border-amber-400/40 shadow-2xl p-8 md:p-14 flex flex-col justify-between relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -759,8 +856,8 @@ export default function Presentation({ onToggleDashboard }: PresentationProps) {
           </div>
         )}
 
-        {/* SLIDE 11: FEEDBACK FORM & ATTENDANCE QR CODE */}
-        {currentSlide === 11 && (
+        {/* SLIDE 12: FEEDBACK FORM & ATTENDANCE QR CODE */}
+        {currentSlide === 12 && (
           <div className="w-full h-full min-h-[580px] md:min-h-[660px] bg-gradient-to-br from-slate-900 via-[#001F3F] to-slate-950 rounded-3xl border border-amber-400/50 shadow-2xl p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
             <div className="flex items-center justify-between pb-6 border-b border-slate-800">
               <div>
